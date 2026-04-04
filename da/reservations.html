@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservationer — Nyhavn 17</title>
+  <meta name="description" content="Book dit bord hos Nyhavn 17. Åbent dagligt 09:30–00:30. Reserver online eller ring til os på +45 33 12 54 19." />
+  <link rel="alternate" hreflang="en" href="../reservations.html" />
+  <link rel="alternate" hreflang="da" href="reservations.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0f1c2e', dark: '#0a1520', mid: '#1a2332', light: '#2a3a4f' },
+            gold: { DEFAULT: '#F7CD6F', dark: '#d4a843', light: '#fbe4a8' },
+            cream: { DEFAULT: '#f5f0e8', muted: '#a89f8c' },
+          },
+          fontFamily: {
+            serif: ['"EB Garamond"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0f1c2e; color: #f5f0e8; font-family: 'DM Sans', sans-serif; cursor: none; }
+    h1, h2, h3 { font-family: 'EB Garamond', serif; }
+    #cursor-dot { position: fixed; width: 8px; height: 8px; background: #F7CD6F; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+    #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1.5px solid rgba(247,205,111,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
+    body.cursor-hover #cursor-ring { width: 48px; height: 48px; }
+    #nav { transition: background 0.4s, box-shadow 0.4s; }
+    #nav.scrolled { background: rgba(15,28,46,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(247,205,111,0.1); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #F7CD6F; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    #mobile-menu { display: none; position: fixed; inset: 0; background: rgba(10,21,32,0.98); z-index: 40; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; }
+    #mobile-menu.open { display: flex; }
+    .field-wrap { position: relative; }
+    .field-wrap input, .field-wrap select, .field-wrap textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(42,58,79,1); color: #f5f0e8; font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 1.25rem 0 0.5rem; outline: none; transition: border-color 0.3s; appearance: none; }
+    .field-wrap input:focus, .field-wrap select:focus, .field-wrap textarea:focus { border-bottom-color: #F7CD6F; }
+    .field-wrap label { position: absolute; top: 1.25rem; left: 0; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(168,159,140,0.8); transition: top 0.25s, font-size 0.25s, color 0.25s; pointer-events: none; }
+    .field-wrap input:focus ~ label, .field-wrap input:not(:placeholder-shown) ~ label, .field-wrap select:focus ~ label, .field-wrap textarea:focus ~ label, .field-wrap textarea:not(:placeholder-shown) ~ label { top: 0; font-size: 0.6rem; color: #F7CD6F; }
+    .field-wrap select option { background: #1a2332; color: #f5f0e8; }
+    .field-wrap textarea { resize: none; height: 100px; }
+    #success-overlay { display: none; }
+    #success-overlay.show { display: flex; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <div id="mobile-menu">
+    <button id="mobile-close" class="absolute top-6 right-6 text-cream text-3xl cursor-pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Forside</a>
+    <a href="menu.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Menu</a>
+    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Vores Historie</a>
+    <a href="reservations.html" class="font-serif text-4xl text-gold cursor-pointer">Reservationer</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Kontakt</a>
+    <div class="flex items-center gap-3 mt-2">
+      <a href="../reservations.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">EN</a>
+      <span class="font-sans text-cream/20 text-sm">|</span>
+      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">DA</span>
+    </div>
+    <a href="reservations.html" class="mt-4 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer">Book et Bord</a>
+  </div>
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl text-cream tracking-wide cursor-pointer hover:text-gold transition-colors">Nyhavn 17</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="menu.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Menu</a>
+        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Vores Historie</a>
+        <a href="reservations.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer">Reservationer</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Kontakt</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <div class="flex items-center gap-1.5">
+          <a href="../reservations.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">EN</a>
+          <span class="font-sans text-cream/20 text-xs px-1">|</span>
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">DA</span>
+        </div>
+        <a href="reservations.html" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book et Bord</a>
+      </div>
+      <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </nav>
+
+  <header class="pt-40 pb-20 px-6 text-center" style="background: #0a1520;">
+    <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Reserver Dit Bord</p>
+    <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-6">Book et Bord</h1>
+    <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-md mx-auto text-sm leading-relaxed">Vi vil meget gerne have dig. Reserver online nedenfor, eller ring til os direkte på <a href="tel:+4533125419" class="text-cream/80 hover:text-gold transition-colors cursor-pointer">+45 33 12 54 19</a>.</p>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <div>
+      <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-8">Online Reservation</p>
+      <form id="booking-form" class="space-y-8" novalidate>
+        <div class="reveal grid grid-cols-2 gap-6">
+          <div class="field-wrap">
+            <input type="text" id="first-name" name="first-name" placeholder=" " required />
+            <label for="first-name">Fornavn</label>
+          </div>
+          <div class="field-wrap">
+            <input type="text" id="last-name" name="last-name" placeholder=" " required />
+            <label for="last-name">Efternavn</label>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1 field-wrap">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">E-mailadresse</label>
+        </div>
+        <div class="reveal reveal-delay-1 field-wrap">
+          <input type="tel" id="phone" name="phone" placeholder=" " />
+          <label for="phone">Telefonnummer</label>
+        </div>
+        <div class="reveal reveal-delay-2 grid grid-cols-2 gap-6">
+          <div class="field-wrap">
+            <input type="date" id="date" name="date" placeholder=" " required />
+            <label for="date">Dato</label>
+          </div>
+          <div class="field-wrap">
+            <input type="time" id="time" name="time" placeholder=" " required />
+            <label for="time">Tidspunkt</label>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2 field-wrap">
+          <select id="guests" name="guests" required>
+            <option value="" disabled selected></option>
+            <option value="1">1 gæst</option>
+            <option value="2">2 gæster</option>
+            <option value="3">3 gæster</option>
+            <option value="4">4 gæster</option>
+            <option value="5">5 gæster</option>
+            <option value="6">6 gæster</option>
+            <option value="7">7 gæster</option>
+            <option value="8">8 gæster</option>
+            <option value="9+">9+ gæster (kontakt os)</option>
+          </select>
+          <label for="guests">Antal Gæster</label>
+        </div>
+        <div class="reveal reveal-delay-2 field-wrap">
+          <textarea id="notes" name="notes" placeholder=" "></textarea>
+          <label for="notes">Særlige Ønsker eller Bemærkninger</label>
+        </div>
+        <div class="reveal reveal-delay-2 pt-2">
+          <button type="submit" id="submit-btn" class="w-full py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors flex items-center justify-center gap-3">
+            <span id="btn-text">Bekræft Reservation</span>
+            <svg id="btn-spinner" class="hidden w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </button>
+          <p class="text-cream/40 text-xs text-center mt-4 font-sans">Du modtager en bekræftelse på e-mail inden for få minutter.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="space-y-12">
+      <div class="reveal">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-6">Åbningstider</p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center py-3 border-b border-navy-light">
+            <span class="font-sans text-cream/70 text-sm">Alle Dage</span>
+            <span class="font-serif text-cream text-lg">09:30 — 00:30</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-navy-light">
+            <span class="font-sans text-cream/70 text-sm">Morgenmad</span>
+            <span class="font-sans text-cream/80 text-sm">Fra kl. 09:30</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-navy-light">
+            <span class="font-sans text-cream/70 text-sm">Frokost</span>
+            <span class="font-sans text-cream/80 text-sm">11:30 — 16:00</span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-b border-navy-light">
+            <span class="font-sans text-cream/70 text-sm">Middag</span>
+            <span class="font-sans text-cream/80 text-sm">17:00 — 21:30</span>
+          </div>
+          <div class="flex justify-between items-center py-3">
+            <span class="font-sans text-cream/70 text-sm">Bar</span>
+            <span class="font-sans text-cream/80 text-sm">Til kl. 00:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-6">Direkte Kontakt</p>
+        <div class="space-y-4">
+          <a href="tel:+4533125419" class="flex items-center gap-4 group cursor-pointer">
+            <div class="w-10 h-10 border border-navy-light flex items-center justify-center group-hover:border-gold transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.86 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="font-sans text-cream/70 group-hover:text-cream transition-colors text-sm">+45 33 12 54 19</span>
+          </a>
+          <a href="mailto:info@nyhavn17.dk" class="flex items-center gap-4 group cursor-pointer">
+            <div class="w-10 h-10 border border-navy-light flex items-center justify-center group-hover:border-gold transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <span class="font-sans text-cream/70 group-hover:text-cream transition-colors text-sm">info@nyhavn17.dk</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-6">Godt at Vide</p>
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <span class="text-gold mt-1 shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed">Drop-in er altid velkomment — vi holder borde til spontane gæster.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-gold mt-1 shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed">Grupper på 9 eller flere — ring venligst til os direkte for at arrangere din booking.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-gold mt-1 shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed">Vi imødekommer kostbehov med glæde — angiv det blot i bemærkningerne.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-gold mt-1 shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed">Privat dining er tilgængeligt — kontakt os direkte for at drøfte mulighederne.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div id="success-overlay" class="fixed inset-0 bg-navy/95 z-50 flex-col items-center justify-center text-center px-6">
+    <div class="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-8">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2 class="font-serif text-4xl text-cream mb-4">Tak</h2>
+    <p class="font-sans text-cream/60 mb-10 max-w-sm leading-relaxed">Din reservationsanmodning er modtaget. Vi bekræfter dit bord pr. e-mail inden for kort tid.</p>
+    <a href="index.html" class="inline-block px-10 py-3 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">Tilbage til Forsiden</a>
+  </div>
+
+  <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Traditionelt dansk brasserie. Åbent dagligt kl. 09:30–00:30.</p></div>
+      <div>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigation</p>
+        <nav class="flex flex-col gap-3">
+          <a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Forside</a>
+          <a href="menu.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Menu</a>
+          <a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Vores Historie</a>
+          <a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Kontakt</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Os</p>
+        <address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address>
+      </div>
+    </div>
+    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. Alle rettigheder forbeholdes.</p></div>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+    let rx = 0, ry = 0, mx = 0, my = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+    document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover')); el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover')); });
+    (function loop() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
+    window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
+    document.getElementById('mobile-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const text = document.getElementById('btn-text');
+      const spinner = document.getElementById('btn-spinner');
+      btn.disabled = true; text.textContent = 'Sender…'; spinner.classList.remove('hidden');
+      setTimeout(() => { document.getElementById('success-overlay').classList.add('show'); }, 1800);
+    });
+    const dateInput = document.getElementById('date');
+    dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+  </script>
+</body>
+</html>
