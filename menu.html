@@ -4,76 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu — Nyhavn 17</title>
-  <meta name="description" content="Breakfast, lunch, dinner and drinks at Nyhavn 17. Traditional Danish brasserie in Copenhagen, open daily from 09:30." />
+  <meta name="description" content="Breakfast, lunch, dinner and drinks at Nyhavn 17. Traditional Danish brasserie in Copenhagen. Kitchen open 09:30–21:30." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { DEFAULT: '#0f1c2e', dark: '#0a1520', mid: '#1a2332', light: '#2a3a4f' },
-            gold: { DEFAULT: '#F7CD6F', dark: '#d4a843', light: '#fbe4a8' },
-            cream: { DEFAULT: '#f5f0e8', muted: '#a89f8c' },
-          },
-          fontFamily: {
-            serif: ['"EB Garamond"', 'Georgia', 'serif'],
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
+      theme: { extend: {
+        colors: { navy: { DEFAULT:'#1a120b', dark:'#120c06', mid:'#2a1f14', light:'#3d3024' }, gold: { DEFAULT:'#F7CD6F', dark:'#d4a843', light:'#fbe4a8' }, cream: { DEFAULT:'#f5f0e8', muted:'#a89f8c' } },
+        fontFamily: { serif:['"EB Garamond"','Georgia','serif'], sans:['"DM Sans"','system-ui','sans-serif'] }
+      }}
     }
   </script>
   <style>
-    body { background-color: #0f1c2e; color: #f5f0e8; font-family: 'DM Sans', sans-serif; cursor: none; }
-    h1, h2, h3, h4 { font-family: 'EB Garamond', serif; }
-    #cursor-dot { position: fixed; width: 8px; height: 8px; background: #F7CD6F; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
-    #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1.5px solid rgba(247,205,111,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
-    body.cursor-hover #cursor-ring { width: 48px; height: 48px; }
-    #nav { transition: background 0.4s, box-shadow 0.4s; }
-    #nav.scrolled { background: rgba(15,28,46,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(247,205,111,0.1); }
-    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #F7CD6F; transition: width 0.3s; }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link { position: relative; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-
-    /* Tabs */
-    .tab-btn { position: relative; padding: 0.75rem 0; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.5); transition: color 0.3s; cursor: pointer; }
-    .tab-btn::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #F7CD6F; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
-    .tab-btn.active { color: #F7CD6F; }
-    .tab-btn.active::after { transform: scaleX(1); }
-    .tab-btn:hover { color: rgba(245,240,232,0.8); }
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
-
-    /* Menu item hover */
-    .menu-item { border-top: 1px solid rgba(42,58,79,0.8); transition: border-color 0.3s; }
-    .menu-item:hover { border-top-color: rgba(247,205,111,0.4); }
-    .menu-item:hover .item-name { color: #F7CD6F; }
-    .item-name { transition: color 0.3s; }
-
-    #mobile-menu { display: none; position: fixed; inset: 0; background: rgba(10,21,32,0.98); z-index: 40; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; }
-    #mobile-menu.open { display: flex; }
-
-    .section-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247,205,111,0.7); }
-
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    body { background:#1a120b; color:#f5f0e8; font-family:'DM Sans',sans-serif; cursor:none; }
+    h1,h2,h3 { font-family:'EB Garamond',serif; }
+    #cursor-dot { position:fixed; width:8px; height:8px; background:#F7CD6F; border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
+    #cursor-ring { position:fixed; width:32px; height:32px; border:1.5px solid rgba(247,205,111,.5); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+    body.cursor-hover #cursor-ring { width:48px; height:48px; }
+    #nav { transition:background .4s,box-shadow .4s; }
+    #nav.scrolled { background:rgba(26,18,11,.95); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(247,205,111,.1); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#F7CD6F; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .dropdown-menu { opacity:0; visibility:hidden; transform:translateY(4px); transition:all .2s ease; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .reveal-delay-1 { transition-delay:.1s; } .reveal-delay-2 { transition-delay:.2s; } .reveal-delay-3 { transition-delay:.3s; }
+    .tilt-card { transform-style:preserve-3d; transition:transform .4s ease,box-shadow .4s ease; }
+    #mobile-menu { display:none; position:fixed; inset:0; background:rgba(18,12,6,.98); z-index:40; flex-direction:column; justify-content:center; align-items:center; gap:1.5rem; }
+    #mobile-menu.open { display:flex; }
+    .menu-item{border-top:1px solid rgba(42,58,79,.8);transition:border-color .3s}
+    .menu-item:hover{border-top-color:rgba(247,205,111,.4)}
+    .menu-item:hover .item-name{color:#F7CD6F}
+    .item-name{transition:color .3s}
+    .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
+    .tab-pane.hidden{display:none}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
   </style>
 </head>
 <body>
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
+  <div id="cursor-dot"></div><div id="cursor-ring"></div>
 
+  <!-- Mobile menu -->
   <div id="mobile-menu">
-    <button id="mobile-close" class="absolute top-6 right-6 text-cream text-3xl cursor-pointer">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
+    <button id="mobile-close" class="absolute top-6 right-6 text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
-    <a href="menu.html" class="font-serif text-4xl text-gold cursor-pointer">Menu</a>
+    <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Lunch</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Dinner</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drinks</a>
     <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Our Story</a>
+    <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
     <a href="reservations.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Reservations</a>
     <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
     <div class="flex items-center gap-3 mt-2">
@@ -81,15 +64,27 @@
       <span class="font-sans text-cream/20 text-sm">|</span>
       <a href="da/menu.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
     </div>
-    <a href="reservations.html" class="mt-4 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer">Book a Table</a>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-2 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
   </div>
 
+  <!-- Nav -->
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-navy/80 backdrop-blur-sm">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="font-serif text-2xl text-cream tracking-wide cursor-pointer hover:text-gold transition-colors">Nyhavn 17</a>
+      <a href="index.html" class="font-serif text-2xl text-gold tracking-wide cursor-pointer">NYHAVN 17</a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="menu.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer">Menu</a>
+        <div class="nav-dropdown relative">
+          <a href="menu.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
+            <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Lunch</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Dinner</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drinks</a>
+            </div>
+          </div>
+        </div>
         <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Our Story</a>
+        <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
         <a href="reservations.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Reservations</a>
         <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
       </div>
@@ -99,609 +94,312 @@
           <span class="font-sans text-cream/20 text-xs px-1">|</span>
           <a href="da/menu.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
         </div>
-        <a href="reservations.html" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
       </div>
       <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     </div>
   </nav>
 
-  <!-- Page header -->
-  <header class="pt-40 pb-20 px-6 text-center relative overflow-hidden" style="background: #0a1520;">
-    <div class="absolute inset-0 opacity-5" style="background-image: url('assets/images/food-menu.jpg'); background-size: cover; background-position: center;"></div>
+  <!-- Header -->
+  <header class="pt-40 pb-20 px-6 text-center relative overflow-hidden" style="background:#120c06;">
+    <div class="absolute inset-0 opacity-5" style="background-image:url('assets/images/food-menu.jpg');background-size:cover;background-position:center;"></div>
     <div class="relative z-10">
-      <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
+      <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Since 1936 · Family Owned</p>
       <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-6">Our Menu</h1>
       <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-      <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-lg mx-auto text-sm leading-relaxed">All day, every day. From the first coffee at 09:30 to the last glass at midnight — everything made with care.</p>
+      <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-lg mx-auto text-sm leading-relaxed">Kitchen open 09:30 to 21:30. Bar open until midnight — weekends until 01:30.</p>
     </div>
   </header>
 
-  <!-- Menu image -->
-  <div class="max-w-6xl mx-auto px-6 -mt-2 mb-0">
-    <div class="reveal overflow-hidden rounded-sm" style="max-height: 400px;">
-      <img src="assets/images/food-menu.jpg" alt="Selection of dishes at Nyhavn 17 — smørrebrød, oysters and bouillabaisse" class="w-full object-cover object-center hover:scale-[1.02] transition-transform duration-700" style="max-height:400px;" />
+  <!-- Tab Navigation -->
+  <div class="bg-navy-mid border-b border-navy-light">
+    <div class="max-w-6xl mx-auto px-6 flex gap-8 overflow-x-auto">
+      <button data-tab="breakfast" class="menu-tab py-4 text-gold text-xs tracking-widest uppercase font-sans border-b border-gold cursor-pointer">Breakfast</button>
+      <button data-tab="lunch" class="menu-tab py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Lunch</button>
+      <button data-tab="dinner" class="menu-tab py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Dinner</button>
+      <button data-tab="drinks" class="menu-tab py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Drinks</button>
     </div>
   </div>
 
-  <!-- Tabs + Menu content -->
+  <!-- Menu Content -->
   <main class="max-w-6xl mx-auto px-6 py-20">
 
-    <!-- Tab navigation -->
-    <div class="flex gap-8 border-b border-navy-light mb-16 overflow-x-auto pb-0" role="tablist">
-      <button class="tab-btn active" data-tab="breakfast" role="tab" aria-selected="true" id="breakfast">Breakfast</button>
-      <button class="tab-btn" data-tab="lunch" role="tab" aria-selected="false" id="lunch">Lunch</button>
-      <button class="tab-btn" data-tab="dinner" role="tab" aria-selected="false" id="dinner">Dinner</button>
-      <button class="tab-btn" data-tab="drinks" role="tab" aria-selected="false" id="drinks">Drinks</button>
-    </div>
-
-    <!-- BREAKFAST -->
-    <div class="tab-pane active" id="tab-breakfast">
-      <p class="font-sans text-cream/50 text-sm mb-12">Served from <strong class="text-cream">09:30</strong> every day.</p>
+    <!-- BREAKFAST TAB -->
+    <div id="tab-breakfast" class="tab-pane">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
         <div>
-          <p class="section-label mb-8">Drinks &amp; Juice</p>
+          <p class="section-label mb-8">Pastry</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Espresso</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">35</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Cortado / Cappuccino / Café Latte</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">50–60</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">French Press</p><p class="font-sans text-cream/45 text-sm mt-1">Per person</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">45</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Mimosa</p><p class="font-sans text-cream/45 text-sm mt-1">Fresh orange juice &amp; Crémant</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">125</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Fresh Juice</p><p class="font-sans text-cream/45 text-sm mt-1">Carrot-apple-ginger or apple-ginger-turmeric</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">85</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Plain Croissant</p><span class="font-sans text-gold text-sm ml-6 shrink-0">25</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Pain au Chocolat</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cinnamon Roll / Cardamom Roll</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stuffed Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Ham &amp; cheese</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chicken Salad &amp; Bacon Croissant</p><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Breakfast Classics</p>
+          <p class="section-label mt-14 mb-8">Eggs</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Yoghurt with Granola &amp; Berries</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">65</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Avocado Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Chilli &amp; feta on sourdough</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Croque Monsieur</p><p class="font-sans text-cream/45 text-sm mt-1">Ham, Gruyère, béchamel</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">125</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Croque Madame</p><p class="font-sans text-cream/45 text-sm mt-1">Ham, Gruyère, béchamel, fried egg</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Plain Scrambled Eggs</p><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Plain Omelette</p><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Scrambled Eggs &amp; Bacon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Omelette with Mushrooms &amp; Cheese</p><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
           </div>
         </div>
+
         <div>
-          <p class="section-label mb-8">Egg Dishes</p>
+          <p class="section-label mb-8">Famous Plates</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Scrambled Eggs on Toast</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">65</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Scrambled Eggs &amp; Smoked Salmon</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">95</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Classic Benedict</p><p class="font-sans text-cream/45 text-sm mt-1">Ham, poached eggs, hollandaise on English muffin</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">95</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Salmon Benedict</p><p class="font-sans text-cream/45 text-sm mt-1">Smoked salmon, poached eggs, hollandaise</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Vegetarian Benedict</p><p class="font-sans text-cream/45 text-sm mt-1">Spinach, roasted tomatoes, poached eggs, hollandaise</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Avocado on Toasted Sourdough</p><p class="font-sans text-cream/45 text-sm mt-1">Avocado smash, fried egg &amp; chili</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">118</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Grilled Ham &amp; Cheese Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">With fried egg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">118</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cheeseburger</p><p class="font-sans text-cream/45 text-sm mt-1">Fried egg inside, lettuce, tomato, onions, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Desserts</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Yoghurt Bowl</p><p class="font-sans text-cream/45 text-sm mt-1">Syrup, berries, granola</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">American Pancakes</p><p class="font-sans text-cream/45 text-sm mt-1">Syrup &amp; berries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Belgian Waffle</p><p class="font-sans text-cream/45 text-sm mt-1">Vanilla ice cream &amp; caramel</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          </div>
+
+          <div class="mt-14 p-8 border border-gold/30 bg-navy-dark/50">
+            <p class="section-label mb-4">Brunch Platter</p>
+            <p class="font-sans text-cream/55 text-sm leading-relaxed mb-4">Scrambled eggs, bacon, sausage, ham, cheese, yoghurt, fresh fruit, pancake, salmon mousse, bread &amp; butter.</p>
+            <div class="flex justify-between items-center">
+              <p class="font-sans text-cream/40 text-xs tracking-widest uppercase">Served until 16:00</p>
+              <span class="font-serif text-2xl text-gold">178,-</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- LUNCH -->
-    <div class="tab-pane" id="tab-lunch">
-      <p class="font-sans text-cream/50 text-sm mb-12">Served from <strong class="text-cream">11:30 to 16:00</strong>.</p>
+    <!-- LUNCH TAB -->
+    <div id="tab-lunch" class="tab-pane hidden">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
         <div>
-          <p class="section-label mb-8">Snacks &amp; Appetisers</p>
+          <p class="section-label mb-8">Sharing Plates</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Baked Green Olives</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">55</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Provence Fries</p><p class="font-sans text-cream/45 text-sm mt-1">With hollandaise</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">85</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pata Negra &amp; Manchego</p><p class="font-sans text-cream/45 text-sm mt-1">Iberian ham, aged Manchego, honey</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">175</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Monkfish Nuggets</p><p class="font-sans text-cream/45 text-sm mt-1">Panko-crusted, aioli</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Josephine Oysters</p><p class="font-sans text-cream/45 text-sm mt-1">6 pieces, lemon, mignonette</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">295</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Truffle Fries</p><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Hot Wings</p><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Hot Honey Chicken</p><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">White Fish Tacos</p><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken or braised beef</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Smørrebrød</p>
+          <p class="section-label mt-14 mb-8">Soups &amp; Salads</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Marinated Herring</p><p class="font-sans text-cream/45 text-sm mt-1">Dark rye, pickled vegetables, dill</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">155</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Hand-Peeled Shrimps</p><p class="font-sans text-cream/45 text-sm mt-1">Dark rye, mayonnaise, lemon, dill</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">185</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Breaded Fish of the Season</p><p class="font-sans text-cream/45 text-sm mt-1">Remoulade, capers, lemon</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">175–185</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Soup of the Season</p><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Ch&egrave;vre Chaud Salad</p><span class="font-sans text-gold text-sm ml-6 shrink-0">158</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chicken Caesar Salad</p><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Tarte Flambée</p>
+          <p class="section-label mt-14 mb-4">Sm&oslash;rrebr&oslash;d</p>
+          <p class="font-sans text-cream/40 text-xs mb-8">1 pc — 135 &nbsp;/&nbsp; 2 pcs — 228 &nbsp;/&nbsp; 3 pcs — 348</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Classic</p><p class="font-sans text-cream/45 text-sm mt-1">Caramelised onion &amp; bacon</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">160</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Grilled Zucchini &amp; Truffle</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">170</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Roasted Potatoes &amp; Pata Negra</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">180</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">2 Kinds of Herring</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Gravad Salmon</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Chicken Salad</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Eggs &amp; Shrimps</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Filet of Plaice</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Roast Beef</p></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Sandwiches</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chicken &amp; Bacon Club</p><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Smoked Salmon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
           </div>
         </div>
+
         <div>
-          <p class="section-label mb-8">Cold Dishes</p>
+          <p class="section-label mb-8">Burgers</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Chèvre Chaud Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Warm goat's cheese, walnuts, honey vinaigrette</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Caesar Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Romaine, parmesan, anchovy, croutons</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Steak Tartare</p><p class="font-sans text-cream/45 text-sm mt-1">Hand-cut beef, cornichons, mustard, capers, egg yolk</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165–225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Chilled Lobster Half</p><p class="font-sans text-cream/45 text-sm mt-1">Mayonnaise, lemon, fresh bread</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">365</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Classic</p><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cheese &amp; Bacon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Crispy Chicken</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Mains</p>
+          <p class="section-label mt-14 mb-8">Fresh Pasta</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Moules Frites</p><p class="font-sans text-cream/45 text-sm mt-1">Steamed mussels, white wine, cream, fries</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Wagyu Cheeseburger</p><p class="font-sans text-cream/45 text-sm mt-1">Brioche, aged cheddar, truffle fries</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Belle's Bouillabaisse</p><p class="font-sans text-cream/45 text-sm mt-1">Provençal fish stew, rouille, grilled bread</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">295</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pan-Seared Halibut</p><p class="font-sans text-cream/45 text-sm mt-1">Seasonal vegetables, beurre blanc</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">365</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Beef Tournedos</p><p class="font-sans text-cream/45 text-sm mt-1">Château potatoes, seasonal vegetables, red wine jus</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">395</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Truffle Mushroom Tagliatelle</p><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Carbonara</p><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Baked Salmon Pasta</p><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+            <div class="menu-item py-4 ml-6"><p class="font-sans text-cream/40 text-xs tracking-widest uppercase">Add seared filet: +150</p></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Desserts</p>
+          <p class="section-label mt-14 mb-8">Best Sellers</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Ice Cream Scoops</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">55</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Profiteroles</p><p class="font-sans text-cream/45 text-sm mt-1">Choux pastry, vanilla cream, warm chocolate sauce</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Yuzu Crème Brûlée</p><p class="font-sans text-cream/45 text-sm mt-1">Yuzu-scented custard, caramelised sugar crust</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">135</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Cheese Selection</p><p class="font-sans text-cream/45 text-sm mt-1">Five cheeses, fruit compote, crackers</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Fish N Chips</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Shooting Star</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Meat Loaf</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Main Courses</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Danish Salmon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Braised Lamb Shank</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Steak Frites</p><span class="font-sans text-gold text-sm ml-6 shrink-0">295</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Desserts</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Sticky Toffee Pudding &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cr&egrave;me Br&ucirc;l&eacute;e</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chocolate Lava Cake &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Apple Crumble Pie</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- DINNER -->
-    <div class="tab-pane" id="tab-dinner">
-      <p class="font-sans text-cream/50 text-sm mb-12">Served from <strong class="text-cream">17:00 to 21:30</strong>.</p>
+    <!-- DINNER TAB (same items as Lunch) -->
+    <div id="tab-dinner" class="tab-pane hidden">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
         <div>
-          <p class="section-label mb-8">Snacks</p>
+          <p class="section-label mb-8">Sharing Plates</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Baked Green Olives</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">55</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Provence Fries</p><p class="font-sans text-cream/45 text-sm mt-1">Saffron aioli</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">95</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pata Negra &amp; Manchego</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">175</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Josephine Oysters</p><p class="font-sans text-cream/45 text-sm mt-1">3 / 6 / 12 pieces</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">155 / 295 / 595</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Truffle Fries</p><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Hot Wings</p><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Hot Honey Chicken</p><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">White Fish Tacos</p><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken or braised beef</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Starters</p>
+          <p class="section-label mt-14 mb-8">Soups &amp; Salads</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Summer Risotto</p><p class="font-sans text-cream/45 text-sm mt-1">Seasonal vegetables, aged parmesan</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Halibut Ceviche</p><p class="font-sans text-cream/45 text-sm mt-1">Citrus, cucumber, chilli, herbs</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">175</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Steak Tartare</p><p class="font-sans text-cream/45 text-sm mt-1">Hand-cut beef, cornichons, mustard, egg yolk</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165–225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Chilled Lobster Half</p><p class="font-sans text-cream/45 text-sm mt-1">Mayonnaise, lemon, fresh bread</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">365</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Soup of the Season</p><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Ch&egrave;vre Chaud Salad</p><span class="font-sans text-gold text-sm ml-6 shrink-0">158</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chicken Caesar Salad</p><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-4">Sm&oslash;rrebr&oslash;d</p>
+          <p class="font-sans text-cream/40 text-xs mb-8">1 pc — 135 &nbsp;/&nbsp; 2 pcs — 228 &nbsp;/&nbsp; 3 pcs — 348</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">2 Kinds of Herring</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Gravad Salmon</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Chicken Salad</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Eggs &amp; Shrimps</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Filet of Plaice</p></div>
+            <div class="menu-item py-5"><p class="item-name font-serif text-xl text-cream">Roast Beef</p></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Sandwiches</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chicken &amp; Bacon Club</p><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Smoked Salmon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
           </div>
         </div>
+
         <div>
-          <p class="section-label mb-8">Mains</p>
+          <p class="section-label mb-8">Burgers</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Belle's Bouillabaisse</p><p class="font-sans text-cream/45 text-sm mt-1">Provençal fish stew, rouille, grilled bread</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">295</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Wagyu Cheeseburger</p><p class="font-sans text-cream/45 text-sm mt-1">Brioche, aged cheddar, truffle fries</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">225</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pan-Seared Halibut</p><p class="font-sans text-cream/45 text-sm mt-1">Seasonal vegetables, beurre blanc</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">365</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Lobster Linguine</p><p class="font-sans text-cream/45 text-sm mt-1">Fresh pasta, bisque butter, tarragon, chilli</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">385</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Beef Tournedos</p><p class="font-sans text-cream/45 text-sm mt-1">Château potatoes, seasonal vegetables, red wine jus</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">395</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Beef Ribeye</p><p class="font-sans text-cream/45 text-sm mt-1">Herb butter, fries, green salad</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">425</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Roasted Poussin</p><p class="font-sans text-cream/45 text-sm mt-1">With herbs, for two people</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">650</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Classic</p><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cheese &amp; Bacon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Crispy Chicken</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Desserts</p>
+          <p class="section-label mt-14 mb-8">Fresh Pasta</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Yuzu Crème Brûlée</p><p class="font-sans text-cream/45 text-sm mt-1">Yuzu custard, caramelised sugar</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">135</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Tarte au Citron</p><p class="font-sans text-cream/45 text-sm mt-1">Lemon tart, crème fraîche, candied zest</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">125</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Profiteroles</p><p class="font-sans text-cream/45 text-sm mt-1">Vanilla cream, warm chocolate sauce</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Cheese Selection</p><p class="font-sans text-cream/45 text-sm mt-1">Five cheeses, fruit compote, crackers</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Truffle Mushroom Tagliatelle</p><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Carbonara</p><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Baked Salmon Pasta</p><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+            <div class="menu-item py-4 ml-6"><p class="font-sans text-cream/40 text-xs tracking-widest uppercase">Add seared filet: +150</p></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Best Sellers</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Fish N Chips</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Shooting Star</p><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Meat Loaf</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Main Courses</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Danish Salmon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Braised Lamb Shank</p><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Steak Frites</p><span class="font-sans text-gold text-sm ml-6 shrink-0">295</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Desserts</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Sticky Toffee Pudding &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cr&egrave;me Br&ucirc;l&eacute;e</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chocolate Lava Cake &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Apple Crumble Pie</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- DRINKS -->
-    <div class="tab-pane" id="tab-drinks">
-      <p class="font-sans text-cream/50 text-sm mb-12">Available all day until <strong class="text-cream">00:30</strong>.</p>
+    <!-- DRINKS TAB -->
+    <div id="tab-drinks" class="tab-pane hidden">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
         <div>
           <p class="section-label mb-8">Champagne &amp; Sparkling</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Crémant de Bourgogne</p><p class="font-sans text-cream/45 text-sm mt-1">Glass</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">165</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Chavost Blanc d'Assemblage 2022</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">850</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Bollinger Special Cuvée</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">1,250</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Dom Pérignon 2013</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">2,850</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cr&eacute;mant de Bourgogne</p><p class="font-sans text-cream/45 text-sm mt-1">Glass</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">165</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chavost 2022</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">850</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bollinger</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">1.250</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Dom P&eacute;rignon 2013</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">2.850</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">White Wine — Glass</p>
+          <p class="section-label mt-14 mb-8">White Wine</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pinot Grigio</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">100</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Sauvignon Blanc</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">125</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pinot Grigio</p><p class="font-sans text-cream/45 text-sm mt-1">Glass</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">100</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sauvignon Blanc</p><p class="font-sans text-cream/45 text-sm mt-1">Glass</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Red Wine — Glass / Bottle</p>
+          <p class="section-label mt-14 mb-8">Red Wine</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Cabernet Sauvignon</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 495</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Nebbiolo</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">160 / 700</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Barolo</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">900</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cabernet Sauvignon</p><p class="font-sans text-cream/45 text-sm mt-1">Glass / Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 495</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nebbiolo</p><p class="font-sans text-cream/45 text-sm mt-1">Glass / Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">160 / 700</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Barolo</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">900</span></div></div>
+          </div>
+
+          <p class="section-label mt-14 mb-8">Ros&eacute;</p>
+          <div class="space-y-0">
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Ros&eacute;</p><p class="font-sans text-cream/45 text-sm mt-1">Glass</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">110–145</span></div></div>
           </div>
         </div>
+
         <div>
-          <p class="section-label mb-8">Rosé</p>
+          <p class="section-label mb-8">Cocktails</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Rosé — Glass</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">110–145</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Espresso Martini</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Apple Sour Fresh</p><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Pisco Sour</p><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Cocktails</p>
+          <p class="section-label mt-14 mb-8">Beer</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Espresso Martini</p><p class="font-sans text-cream/45 text-sm mt-1">Vodka, espresso, coffee liqueur</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">135</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Apple Sour Fresh</p><p class="font-sans text-cream/45 text-sm mt-1">Apple, lemon, egg white, foam</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Pisco Sour</p><p class="font-sans text-cream/45 text-sm mt-1">Pisco, lime, sugar, egg white</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">145</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Draught</p><p class="font-sans text-cream/45 text-sm mt-1">Selection of draught beers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">70–85</span></div></div>
           </div>
 
-          <p class="section-label mt-12 mb-8">Beer &amp; Soft</p>
+          <p class="section-label mt-14 mb-8">Soft Drinks &amp; Coffee</p>
           <div class="space-y-0">
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Draught Beer</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">70–85</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Soft Drinks</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">45–55</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Coffee</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">25–55</span>
-              </div>
-            </div>
-            <div class="menu-item py-5">
-              <div class="flex justify-between items-start">
-                <div><p class="item-name font-serif text-xl text-cream">Tea</p></div>
-                <span class="font-sans text-gold text-sm ml-6 shrink-0">55</span>
-              </div>
-            </div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Soft Drinks</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45–55</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Coffee</p><span class="font-sans text-gold text-sm ml-6 shrink-0">25–55</span></div></div>
+            <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Tea</p><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Reservation CTA -->
+    <!-- Price note & CTA -->
     <div class="mt-24 pt-16 border-t border-navy-light text-center">
-      <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK, including VAT.</p>
-      <p class="font-sans text-cream/40 text-xs mb-10">Menu subject to seasonal changes.</p>
-      <a href="reservations.html" class="inline-block px-12 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserve a Table</a>
+      <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-12 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserve a Table</a>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Traditional Danish brasserie. Open daily, 09:30 to 00:30.</p></div>
+      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Traditional Danish brasserie. Open daily from 09:30.</p></div>
       <div>
         <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p>
         <nav class="flex flex-col gap-3">
@@ -720,47 +418,24 @@
   </footer>
 
   <script>
-    // Cursor
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let rx = 0, ry = 0, mx = 0, my = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-    (function loop() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
-
-    // Sticky nav
-    window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60));
-
-    // Mobile menu
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
-    document.getElementById('mobile-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-
-    // Scroll reveal
-    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-    // Tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.tab;
-        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-        tabPanes.forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        document.getElementById('tab-' + target).classList.add('active');
+    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');let rx=0,ry=0,mx=0,my=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+    (function l(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(l);})();
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
+    document.getElementById('mobile-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+    // Tab switching
+    document.querySelectorAll('.menu-tab').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.menu-tab').forEach(b=>{b.classList.remove('text-gold','border-b','border-gold');b.classList.add('text-cream/40');});
+        btn.classList.remove('text-cream/40');btn.classList.add('text-gold','border-b','border-gold');
+        document.querySelectorAll('.tab-pane').forEach(p=>p.classList.add('hidden'));
+        document.getElementById('tab-'+btn.dataset.tab).classList.remove('hidden');
       });
     });
-
-    // Hash-based tab switching (from other pages)
-    const hash = window.location.hash.replace('#', '');
-    if (hash && document.getElementById('tab-' + hash)) {
-      document.querySelector('[data-tab="' + hash + '"]').click();
-    }
   </script>
 </body>
 </html>
