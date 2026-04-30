@@ -1,0 +1,3 @@
+# Old DA-in-subfolder URLs → DA at root (now default)
+/da/        /          301!
+/da/*       /:splat    301!

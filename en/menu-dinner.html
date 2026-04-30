@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinner Menu — Nyhavn 17</title>
+  <meta name="description" content="The full kitchen menu at Nyhavn 17. Smørrebrød, small plates, classics, burgers, schnitzel and more. Kitchen open 11:30–22:00." />
+  <link rel="alternate" hreflang="en" href="menu-dinner.html" />
+  <link rel="alternate" hreflang="da" href="../menu-dinner.html" />
+  <link rel="alternate" hreflang="x-default" href="../menu-dinner.html" />
+  <link rel="stylesheet" href="../assets/tailwind.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    body{background:#1a120b;color:#f5f0e8;font-family:'DM Sans',sans-serif;cursor:none}
+    h1,h2,h3,h4{font-family:'EB Garamond',serif}
+    #cursor-dot{position:fixed;width:8px;height:8px;background:#F7CD6F;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    #cursor-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(247,205,111,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+    body.cursor-hover #cursor-ring{width:48px;height:48px}
+    #nav{transition:background .4s,box-shadow .4s}
+    #nav.scrolled{background:rgba(26,18,11,.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(247,205,111,.1)}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#F7CD6F;transition:width .3s}.nav-link:hover::after{width:100%}
+    .dropdown-menu{opacity:0;visibility:hidden;transform:translateY(4px);transition:all .2s ease}
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+    #mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,21,32,.98);z-index:40;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem}#mobile-menu.open{display:flex}
+    .menu-item{border-top:1px solid rgba(42,58,79,.8);transition:border-color .3s}.menu-item:hover{border-top-color:rgba(247,205,111,.4)}.menu-item:hover .item-name{color:#F7CD6F}.item-name{transition:color .3s}
+    .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+  <noscript>
+    <!-- noscript-fallback -->
+    <style>
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-pane.hidden, .tab-pane { display: block !important; }
+      .tab-pane:not(:first-of-type) { margin-top: 6rem; padding-top: 4rem; border-top: 1px solid rgba(61,48,36,0.5); }
+      .menu-tab { display: none !important; }
+      .marquee-inner { animation: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+  <div id="mobile-menu">
+    <button id="mobile-close" class="absolute top-6 right-6 text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
+    <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Lunch</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-gold cursor-pointer ml-4">Dinner</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drinks</a>
+    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Our Story</a>
+    <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
+    <a href="private-dining.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Private Dining</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
+    <div class="flex items-center gap-3 mt-2">
+      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">EN</span>
+      <span class="font-sans text-cream/20 text-sm">|</span>
+      <a href="../menu-dinner.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+    </div>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-2 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+  </div>
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-navy/80 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl text-gold tracking-wide cursor-pointer">NYHAVN 17</a>
+      <div class="hidden md:flex items-center gap-8">
+        <div class="nav-dropdown relative">
+          <a href="menu.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
+            <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Lunch</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-gold text-xs tracking-widest uppercase font-sans cursor-pointer">Dinner</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drinks</a>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Our Story</a>
+        <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
+        <a href="private-dining.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Private Dining</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <div class="flex items-center gap-1.5">
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">EN</span>
+          <span class="font-sans text-cream/20 text-xs px-1">|</span>
+          <a href="../menu-dinner.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+        </div>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+      </div>
+      <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </nav>
+
+  <header class="pt-40 pb-16 px-6 text-center" style="background:#120c06;">
+    <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
+    <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Dinner in Nyhavn</h1>
+    <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Kitchen open <strong class="text-cream">11:30</strong> — <strong class="text-cream">22:00</strong></p>
+  </header>
+
+  <div class="bg-navy-mid border-b border-navy-light">
+    <div class="max-w-6xl mx-auto px-6 flex gap-8 overflow-x-auto">
+      <a href="menu-breakfast.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Breakfast</a>
+      <a href="menu-lunch.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Lunch</a>
+      <a href="menu-dinner.html" class="py-4 text-gold text-xs tracking-widest uppercase font-sans border-b border-gold cursor-pointer">Dinner</a>
+      <a href="menu-drinks.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Drinks</a>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <!-- Nyhavn Lunch Platter (Featured) -->
+    <div class="mb-16 p-8 border border-gold/30 bg-navy-dark/50">
+      <h3 class="font-serif text-2xl md:text-3xl text-cream mb-3">Nyhavn Lunch Platter</h3>
+      <p class="font-sans text-cream/55 text-sm leading-relaxed mb-4">A selection of our signature open-faced sandwiches — a classic Danish lunch experience. 2 kinds of herring, egg &amp; shrimp, smoked salmon, chicken salad, roast beef &amp; crispy pork. Served with rye bread, white bread, and butter.</p>
+      <div class="flex justify-end items-center">
+        <span class="font-serif text-2xl text-gold">389,-</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+      <div>
+        <!-- Smørrebrød -->
+        <p class="section-label mb-2">Smørrebrød</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">Free Aalborg Snaps with smørrebrød!</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Potato Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">New Danish potatoes with smoked cheese cream and browned butter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marinated Herring</p><p class="font-sans text-cream/45 text-sm mt-1">Classic marinated herring with fresh herbs, capers, and red onion on rye bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Curry Herring</p><p class="font-sans text-cream/45 text-sm mt-1">Classic curry herring with crispy apple, capers, and red onion on rye bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Egg &amp; Shrimps</p><p class="font-sans text-cream/45 text-sm mt-1">Hand-peeled shrimps with egg, lemon, dill, and homemade mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crispy Plaice Fillet</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy fried plaice fillet with hand-peeled shrimps, mayonnaise, dill, chervil, and lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Smoked Salmon</p><p class="font-sans text-cream/45 text-sm mt-1">Fluffy scrambled eggs, chives, tomato &amp; asparagus</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nyhavn Star Dish<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATURE</span></p><p class="font-sans text-cream/45 text-sm mt-1">Classic star dish with crispy and steamed fish fillet, shrimps, asparagus, and dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chicken Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Classic chicken salad on crispy sourdough bread with pickled mushrooms, asparagus, and crispy bacon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roast Beef Deluxe<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATURE</span></p><p class="font-sans text-cream/45 text-sm mt-1">Roast beef with crispy onions, pickles, remoulade, and freshly grated horseradish</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fried Brie</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy fried brie with blackcurrant jam and toasted bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Small Plates -->
+        <p class="section-label mb-8">Small Plates</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Truffle Fries</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy potatoes with truffle, parmesan &amp; sriracha mayo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crispy Squid</p><p class="font-sans text-cream/45 text-sm mt-1">Small fried calamari, aioli &amp; lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Korean Fried Chicken</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy chicken tossed in hoisin sauce, spring onions, sesame seeds &amp; sriracha mayo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Slow-cooked pork in a soft brioche bun, creamy coleslaw and BBQ sauce &nbsp;·&nbsp; 2 pcs / 3 pcs</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169 / 229</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken wings tossed in BBQ sauce with ranch and coriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos</p><p class="font-sans text-cream/45 text-sm mt-1">Tortilla chips with cheddar, jalapeños, salsa, guacamole and sour cream &nbsp;·&nbsp; plain / chicken</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189 / 249</span></div></div>
+        </div>
+
+        <!-- Classics -->
+        <p class="section-label mt-14 mb-8">Classics</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nyhavn 17 Burger</p><p class="font-sans text-cream/45 text-sm mt-1">Juicy beef burger with cheddar, bacon, lettuce, tomato, pickles, and house signature sauce, served with crispy French fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fish &amp; Chips<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATURE</span></p><p class="font-sans text-cream/45 text-sm mt-1">Beer-battered fish with golden fries, homemade tartar sauce, and lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fried Pork</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy pork with parsley sauce, pickled beets, potatoes &amp; mustard</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grilled chicken breast, curry mayonnaise, tomato, lettuce, bacon &amp; crispy French fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Veal Schnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Classic breaded veal schnitzel with capers, anchovies, horseradish, and potatoes &nbsp;·&nbsp; small / large</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">349 / 459</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Steamed corn with butter, coleslaw, crispy French fries, BBQ sauce &amp; a whole side of ribs</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Salmon Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Oven-baked Danish salmon, steamed asparagus, potatoes &amp; hollandaise sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">329</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Caesar Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy romaine lettuce with chicken, parmesan, croutons, and classic dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">259</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak Frites</p><p class="font-sans text-cream/45 text-sm mt-1">Juicy New York Strip 350g served with fresh green salad and crispy French fries &amp; béarnaise sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 pt-16 border-t border-navy-light text-center">
+      <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+        <a href="menu-drinks.html" class="inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">Drinks Menu →</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserve a Table</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Gallery -->
+  <section class="bg-navy-dark py-20 px-6 border-t border-navy-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">Gallery</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-cream mb-4">A Glimpse Inside</h2>
+        <div class="w-12 h-px bg-gold mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01146.jpg" alt="Nyhavn 17 facade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new1.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new2.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01079.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new3.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01248.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new4.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01251.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new5.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01291.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01316.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01324.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Nyhavn's oldest gastropub — traditional Danish food, smørrebrød, classic pub favourites and more.</p></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p><nav class="flex flex-col gap-3"><a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Home</a><a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Our Story</a><a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Contact</a></nav></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Us</p><address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address></div>
+    </div>
+    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. All rights reserved.</p></div>
+  </footer>
+
+  <script>
+    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');let rx=0,ry=0,mx=0,my=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+    (function l(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(l);})();
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
+    document.getElementById('mobile-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

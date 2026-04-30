@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinks Menu — Nyhavn 17</title>
+  <meta name="description" content="Wine, champagne, cocktails, beer and more at Nyhavn 17. Bar open daily until midnight — weekends until 01:30." />
+  <link rel="alternate" hreflang="en" href="menu-drinks.html" />
+  <link rel="alternate" hreflang="da" href="../menu-drinks.html" />
+  <link rel="alternate" hreflang="x-default" href="../menu-drinks.html" />
+  <link rel="stylesheet" href="../assets/tailwind.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    body{background:#1a120b;color:#f5f0e8;font-family:'DM Sans',sans-serif;cursor:none}
+    h1,h2,h3,h4{font-family:'EB Garamond',serif}
+    #cursor-dot{position:fixed;width:8px;height:8px;background:#F7CD6F;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    #cursor-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(247,205,111,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+    body.cursor-hover #cursor-ring{width:48px;height:48px}
+    #nav{transition:background .4s,box-shadow .4s}
+    #nav.scrolled{background:rgba(26,18,11,.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(247,205,111,.1)}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#F7CD6F;transition:width .3s}.nav-link:hover::after{width:100%}
+    .dropdown-menu{opacity:0;visibility:hidden;transform:translateY(4px);transition:all .2s ease}
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+    #mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,21,32,.98);z-index:40;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem}#mobile-menu.open{display:flex}
+    .menu-item{border-top:1px solid rgba(42,58,79,.8);transition:border-color .3s}.menu-item:hover{border-top-color:rgba(247,205,111,.4)}.menu-item:hover .item-name{color:#F7CD6F}.item-name{transition:color .3s}
+    .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+  <noscript>
+    <!-- noscript-fallback -->
+    <style>
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-pane.hidden, .tab-pane { display: block !important; }
+      .tab-pane:not(:first-of-type) { margin-top: 6rem; padding-top: 4rem; border-top: 1px solid rgba(61,48,36,0.5); }
+      .menu-tab { display: none !important; }
+      .marquee-inner { animation: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+  <div id="mobile-menu">
+    <button id="mobile-close" class="absolute top-6 right-6 text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
+    <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Lunch</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Dinner</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-gold cursor-pointer ml-4">Drinks</a>
+    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Our Story</a>
+    <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
+    <a href="private-dining.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Private Dining</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
+    <div class="flex items-center gap-3 mt-2">
+      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">EN</span>
+      <span class="font-sans text-cream/20 text-sm">|</span>
+      <a href="../menu-drinks.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+    </div>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-2 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+  </div>
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-navy/80 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl text-gold tracking-wide cursor-pointer">NYHAVN 17</a>
+      <div class="hidden md:flex items-center gap-8">
+        <div class="nav-dropdown relative">
+          <a href="menu.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
+            <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Lunch</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Dinner</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-gold text-xs tracking-widest uppercase font-sans cursor-pointer">Drinks</a>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Our Story</a>
+        <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
+        <a href="private-dining.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Private Dining</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <div class="flex items-center gap-1.5">
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">EN</span>
+          <span class="font-sans text-cream/20 text-xs px-1">|</span>
+          <a href="../menu-drinks.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+        </div>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+      </div>
+      <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </nav>
+
+  <header class="pt-40 pb-16 px-6 text-center" style="background:#120c06;">
+    <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
+    <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Drinks</h1>
+    <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Bar open until <strong class="text-cream">00:00</strong> &nbsp;·&nbsp; Weekends until <strong class="text-cream">01:30</strong></p>
+  </header>
+
+  <div class="bg-navy-mid border-b border-navy-light">
+    <div class="max-w-6xl mx-auto px-6 flex gap-8 overflow-x-auto">
+      <a href="menu-breakfast.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Breakfast</a>
+      <a href="menu-lunch.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Lunch</a>
+      <a href="menu-dinner.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Dinner</a>
+      <a href="menu-drinks.html" class="py-4 text-gold text-xs tracking-widest uppercase font-sans border-b border-gold cursor-pointer">Drinks</a>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
+      <div>
+        <!-- Aalborg Snaps -->
+        <p class="section-label mb-8">Aalborg Snaps</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Aalborg Snaps</p><p class="font-sans text-cream/45 text-sm mt-1">See our snaps/akvavit menu for full selection &nbsp;·&nbsp; 3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45 / 75</span></div></div>
+        </div>
+
+        <!-- Cava & Champagne -->
+        <p class="section-label mt-14 mb-8">Cava &amp; Champagne</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Codorníu Anna de Codorníu</p><p class="font-sans text-cream/45 text-sm mt-1">Blanc de Blancs, Cava Brut &nbsp;·&nbsp; glass / bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 580</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Moët &amp; Chandon</p><p class="font-sans text-cream/45 text-sm mt-1">Champagne Imperial Brut &nbsp;·&nbsp; bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">850</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Perrier-Jouët</p><p class="font-sans text-cream/45 text-sm mt-1">Belle Epoque 2015 &nbsp;·&nbsp; bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">2,600</span></div></div>
+        </div>
+
+        <!-- Rosé -->
+        <p class="section-label mt-14 mb-8">Rosé &nbsp;·&nbsp; 15 / 25 / 75 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">PG Rosé</p><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Whispering Angel</p><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
+        </div>
+
+        <!-- White Wine -->
+        <p class="section-label mt-14 mb-8">White Wine &nbsp;·&nbsp; 15 / 25 / 75 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Colombard/Sauvignon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Riesling</p><span class="font-sans text-gold text-sm ml-6 shrink-0">125 / 200 / 600</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chardonnay</p><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
+        </div>
+
+        <!-- Red Wine -->
+        <p class="section-label mt-14 mb-8">Red Wine &nbsp;·&nbsp; 15 / 25 / 75 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Montepulciano</p><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Garnacha</p><span class="font-sans text-gold text-sm ml-6 shrink-0">125 / 200 / 600</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Pinot Noir</p><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Peter Sisseck PSI 2023</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">950</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gevrey-Chambertin 2023</p><p class="font-sans text-cream/45 text-sm mt-1">Bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">1,800</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Cocktails -->
+        <p class="section-label mb-8">Cocktails &nbsp;·&nbsp; glass / pitcher</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Gin &amp; Mango Smash</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135 / 489</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Raspberry Peach Collins</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135 / 489</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Orange Spritz</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135 / 489</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Espresso Martini</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Irish Coffee</p><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+        </div>
+
+        <!-- Draught Beer -->
+        <p class="section-label mt-14 mb-8">Draught Beer &nbsp;·&nbsp; 30 cl / 50 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Royal Pilsner</p><span class="font-sans text-gold text-sm ml-6 shrink-0">54 / 84</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Royal Classic</p><span class="font-sans text-gold text-sm ml-6 shrink-0">58 / 86</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Royal Blanche</p><span class="font-sans text-gold text-sm ml-6 shrink-0">58 / 86</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Royal IPA</p><span class="font-sans text-gold text-sm ml-6 shrink-0">58 / 86</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Nyhavn 17 Brown Ale</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62 / 92</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Anarkist Bohemian Ballroom</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62 / 92</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Murphy's Stout</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62 / 92</span></div></div>
+        </div>
+
+        <!-- Bottled Beer -->
+        <p class="section-label mt-14 mb-8">Bottled Beer</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crabbies Ginger Beer</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Apple Cider Nørrebrobyghus</p><p class="font-sans text-cream/45 text-sm mt-1">33 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+        </div>
+
+        <!-- Premium Gin -->
+        <p class="section-label mt-14 mb-8">Premium Gin &nbsp;·&nbsp; 3 cl / 5 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Beefeater Dry Gin</p><span class="font-sans text-gold text-sm ml-6 shrink-0">87 / 105</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Beefeater 24</p><span class="font-sans text-gold text-sm ml-6 shrink-0">92 / 114</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Malfy Con Arancia</p><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Gin Malfy Con Limone</p><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Gin Malfy Originale</p><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Gin Malfy Rosa</p><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Monkey 47 Dry Gin</p><span class="font-sans text-gold text-sm ml-6 shrink-0">167 / 220</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Monkey 47 Sloe</p><span class="font-sans text-gold text-sm ml-6 shrink-0">167 / 220</span></div></div>
+        </div>
+
+        <!-- Tonics -->
+        <p class="section-label mt-14 mb-8">Tonics</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Fever-Tree Indian Tonic</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Fever-Tree Mediterranean</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+        </div>
+
+        <!-- Soft Drinks & Juice -->
+        <p class="section-label mt-14 mb-8">Soft Drinks &amp; Juice &nbsp;·&nbsp; 50 cl</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Pepsi / Pepsi Max</p><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Faxe Kondi</p><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Miranda Orange / Lemon</p><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Juice</p><p class="font-sans text-cream/45 text-sm mt-1">Apple, orange, elderflower</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
+        </div>
+
+        <!-- Filtered Water -->
+        <p class="section-label mt-14 mb-8">Filtered Water</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Still or Sparkling</p><p class="font-sans text-cream/45 text-sm mt-1">75 cl bottle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+        </div>
+        <p class="font-sans text-cream/40 text-xs mt-3 italic">We don't serve tap water.</p>
+
+        <!-- Coffee & Tea -->
+        <p class="section-label mt-14 mb-8">Coffee &amp; Tea</p>
+        <div class="space-y-0">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Espresso</p><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Americano</p><span class="font-sans text-gold text-sm ml-6 shrink-0">52</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cortado</p><span class="font-sans text-gold text-sm ml-6 shrink-0">54</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Café Latte</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Flat White</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Cappuccino</p><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Hot Chocolate</p><span class="font-sans text-gold text-sm ml-6 shrink-0">72</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tea</p><p class="font-sans text-cream/45 text-sm mt-1">See selection</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 pt-16 border-t border-navy-light text-center">
+      <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+        <a href="menu-lunch.html" class="inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">← Lunch Menu</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserve a Table</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Gallery -->
+  <section class="bg-navy-dark py-20 px-6 border-t border-navy-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">Gallery</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-cream mb-4">A Glimpse Inside</h2>
+        <div class="w-12 h-px bg-gold mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01146.jpg" alt="Nyhavn 17 facade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new1.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new2.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01079.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new3.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01248.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new4.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01251.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/new5.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01291.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01316.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="../assets/images/hero/DSC01324.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Nyhavn's oldest gastropub — traditional Danish food, smørrebrød, classic pub favourites and more.</p></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p><nav class="flex flex-col gap-3"><a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Home</a><a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Our Story</a><a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Contact</a></nav></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Us</p><address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address></div>
+    </div>
+    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. All rights reserved.</p></div>
+  </footer>
+
+  <script>
+    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');let rx=0,ry=0,mx=0,my=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+    (function l(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(l);})();
+    window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
+    document.getElementById('mobile-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

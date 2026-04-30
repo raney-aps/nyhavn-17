@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story — Nyhavn 17</title>
+  <meta name="description" content="Four generations, one address. The story of Nyhavn 17 — Copenhagen's beloved gastropub since 1936." />
+  <link rel="alternate" hreflang="en" href="about.html" />
+  <link rel="alternate" hreflang="da" href="../about.html" />
+  <link rel="alternate" hreflang="x-default" href="../about.html" />
+  <link rel="stylesheet" href="../assets/tailwind.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #1a120b; color: #f5f0e8; font-family: 'DM Sans', sans-serif; cursor: none; }
+    h1, h2, h3, h4 { font-family: 'EB Garamond', serif; }
+    #cursor-dot { position: fixed; width: 8px; height: 8px; background: #F7CD6F; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+    #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1.5px solid rgba(247,205,111,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
+    body.cursor-hover #cursor-ring { width: 48px; height: 48px; }
+    #nav { transition: background 0.4s, box-shadow 0.4s; }
+    #nav.scrolled { background: rgba(26,18,11,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(247,205,111,0.1); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #F7CD6F; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    #mobile-menu { display: none; position: fixed; inset: 0; background: rgba(18,12,6,0.98); z-index: 40; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; }
+    #mobile-menu.open { display: flex; }
+    .timeline-item::before { content: ''; position: absolute; left: -1px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, #F7CD6F, transparent); }
+    .img-reveal { overflow: hidden; }
+    .img-reveal img { transition: transform 0.7s ease; }
+    .img-reveal:hover img { transform: scale(1.04); }
+    .dropdown-menu{opacity:0;visibility:hidden;transform:translateY(4px);transition:all .2s ease}
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+  <noscript>
+    <!-- noscript-fallback -->
+    <style>
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-pane.hidden, .tab-pane { display: block !important; }
+      .tab-pane:not(:first-of-type) { margin-top: 6rem; padding-top: 4rem; border-top: 1px solid rgba(61,48,36,0.5); }
+      .menu-tab { display: none !important; }
+      .marquee-inner { animation: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <div id="mobile-menu">
+    <button id="mobile-close" class="absolute top-6 right-6 text-cream text-3xl cursor-pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
+    <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Lunch</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Dinner</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drinks</a>
+    <a href="about.html" class="font-serif text-4xl text-gold cursor-pointer">Our Story</a>
+    <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
+    <a href="private-dining.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Private Dining</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
+    <div class="flex items-center gap-3 mt-2">
+      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">EN</span>
+      <span class="font-sans text-cream/20 text-sm">|</span>
+      <a href="../about.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+    </div>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-4 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer">Book a Table</a>
+  </div>
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl text-gold tracking-wide cursor-pointer">NYHAVN 17</a>
+      <div class="hidden md:flex items-center gap-8">
+        <div class="nav-dropdown relative">
+          <a href="menu.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
+            <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Lunch</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Dinner</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drinks</a>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer">Our Story</a>
+        <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
+        <a href="private-dining.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Private Dining</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4">
+        <div class="flex items-center gap-1.5">
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">EN</span>
+          <span class="font-sans text-cream/20 text-xs px-1">|</span>
+          <a href="../about.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+        </div>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+      </div>
+      <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="relative h-[70vh] min-h-[480px] overflow-hidden flex items-end">
+    <div class="absolute inset-0">
+      <img src="../assets/images/hero-canal.jpg" alt="Nyhavn canal at dusk, Copenhagen" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(18,12,6,0.2) 0%, rgba(18,12,6,0.75) 70%, rgba(18,12,6,1) 100%);"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
+      <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Est. 1936</p>
+      <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream leading-tight">Our Story</h1>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="py-24 px-6 bg-navy">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="reveal w-10 h-px bg-gold mx-auto mb-10"></div>
+      <blockquote class="reveal reveal-delay-1 font-serif text-3xl md:text-4xl text-cream leading-relaxed italic mb-10">"The canal outside has changed. The city has changed. But the warmth inside Nyhavn 17 has not."</blockquote>
+      <p class="reveal reveal-delay-2 font-sans text-cream/60 leading-relaxed">What started as a tavern serving sailors and dock workers in 1936 has grown, generation by generation, into one of the most cherished places to sit, eat, and feel welcome in Copenhagen. The address has always been the same. The commitment to good food and honest hospitality has never wavered.</p>
+    </div>
+  </section>
+
+  <!-- Split: interior image + story -->
+  <section class="py-0 bg-navy-dark">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
+      <div class="img-reveal reveal">
+        <img src="../assets/images/interior.jpg" alt="The warm, candlelit interior of Nyhavn 17" class="w-full h-full object-cover min-h-[500px]" />
+      </div>
+      <div class="flex flex-col justify-center px-10 py-20">
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">The Space</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl text-cream mb-6">A Room That Remembers</h2>
+        <div class="reveal reveal-delay-1 w-10 h-px bg-gold mb-8"></div>
+        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed mb-5">Step inside and you step back — in the best possible way. Dark wood, soft light, the smell of good butter and fresh bread. Tables close enough that you feel the life of the room, far enough apart that you feel at ease.</p>
+        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed">The room has hosted anniversaries and first dates, birthday lunches and farewell dinners. It has fed writers, labourers, royalty, and tourists who wandered in on a rainy Tuesday. Everyone gets the same table.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-24 px-6 bg-navy">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">History</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream">Four Generations</h2>
+      </div>
+      <div class="space-y-12 pl-8 border-l border-navy-light">
+        <div class="reveal relative timeline-item">
+          <div class="absolute -left-[2.1rem] top-1.5 w-4 h-4 rounded-full border-2 border-gold bg-navy"></div>
+          <p class="font-sans text-gold text-xs tracking-widest uppercase mb-2">1936</p>
+          <h3 class="font-serif text-2xl text-cream mb-3">A Sailor's Tavern</h3>
+          <p class="font-sans text-cream/60 leading-relaxed">Nyhavn 17 opens its doors as a modest tavern on the canal, serving the sailors and dock workers who made their living on the water. Simple food, honest drink, and a fire in the winter.</p>
+        </div>
+        <div class="reveal relative">
+          <div class="absolute -left-[2.1rem] top-1.5 w-4 h-4 rounded-full border-2 border-gold/50 bg-navy"></div>
+          <p class="font-sans text-gold text-xs tracking-widest uppercase mb-2">1970s–1980s</p>
+          <h3 class="font-serif text-2xl text-cream mb-3">Nyhavn's Most Iconic Tavern Takes Shape</h3>
+          <p class="font-sans text-cream/60 leading-relaxed">The second generation expands the kitchen and introduces a proper menu. European classics begin to share the table with Danish staples. The neighbourhood is changing, and so is the restaurant — but the welcome stays the same.</p>
+        </div>
+        <div class="reveal relative">
+          <div class="absolute -left-[2.1rem] top-1.5 w-4 h-4 rounded-full border-2 border-gold/50 bg-navy"></div>
+          <p class="font-sans text-gold text-xs tracking-widest uppercase mb-2">1990s–2000s</p>
+          <h3 class="font-serif text-2xl text-cream mb-3">Nyhavn Finds Its Identity</h3>
+          <p class="font-sans text-cream/60 leading-relaxed">As Nyhavn transforms into one of Copenhagen's best-loved destinations, so does the restaurant. The third generation refines the menu, deepens the wine list, and builds a reputation that stretches beyond the canal.</p>
+        </div>
+        <div class="reveal relative">
+          <div class="absolute -left-[2.1rem] top-1.5 w-4 h-4 rounded-full border-2 border-gold bg-navy"></div>
+          <p class="font-sans text-gold text-xs tracking-widest uppercase mb-2">Today</p>
+          <h3 class="font-serif text-2xl text-cream mb-3">Father &amp; Son</h3>
+          <p class="font-sans text-cream/60 leading-relaxed">The fourth generation is now at the helm. Father and son, side by side, keeping the tradition alive while remaining curious — about new ingredients, new ideas, and new guests arriving for the first time from every corner of the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-24 px-6 bg-navy-dark">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">What We Believe In</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl text-cream">The Things That Don't Change</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-navy-light">
+        <div class="reveal bg-navy-dark p-10">
+          <div class="w-10 h-px bg-gold mb-8"></div>
+          <h3 class="font-serif text-2xl text-cream mb-4">Good Ingredients</h3>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed">We cook with what's good. Seasonal produce, careful sourcing, and a respect for the things that grow in and around Denmark.</p>
+        </div>
+        <div class="reveal reveal-delay-1 bg-navy-dark p-10">
+          <div class="w-10 h-px bg-gold mb-8"></div>
+          <h3 class="font-serif text-2xl text-cream mb-4">No Rush</h3>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed">A meal here is not an event with a clock on it. Stay for one course or four. Linger over the wine. Watch the canal. We're open until half past midnight for exactly that reason.</p>
+        </div>
+        <div class="reveal reveal-delay-2 bg-navy-dark p-10">
+          <div class="w-10 h-px bg-gold mb-8"></div>
+          <h3 class="font-serif text-2xl text-cream mb-4">Everyone Welcome</h3>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed">From the first coffee of the morning to the last cocktail of the night. Whether you've been coming for thirty years or walked in ten minutes ago — you're welcome at Nyhavn 17.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 px-6 text-center" style="background: #120c06;">
+    <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Come and See For Yourself</p>
+    <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream mb-8">We'd Love to Have You</h2>
+    <div class="reveal reveal-delay-1 w-10 h-px bg-gold mx-auto mb-10"></div>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="reveal reveal-delay-2 inline-block px-12 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Nyhavn's oldest gastropub — traditional Danish food, smørrebrød, classic pub favourites and more.</p></div>
+      <div>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p>
+        <nav class="flex flex-col gap-3">
+          <a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Home</a>
+          <a href="menu.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Menu</a>
+          <a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Us</p>
+        <address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address>
+      </div>
+    </div>
+    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. All rights reserved.</p></div>
+  </footer>
+
+  <script>
+    const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+    let rx = 0, ry = 0, mx = 0, my = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+    document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover')); el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover')); });
+    (function loop() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
+    window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
+    document.getElementById('mobile-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+    const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

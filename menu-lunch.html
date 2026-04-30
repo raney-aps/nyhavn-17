@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lunch Menu — Nyhavn 17</title>
-  <meta name="description" content="The full kitchen menu at Nyhavn 17. Smørrebrød, burgers, pasta, fish & chips, steak frites and more. Lunch served 11:30–21:30." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frokost &amp; Middag Menu — Nyhavn 17</title>
+  <meta name="description" content="Det fulde køkkenmenu hos Nyhavn 17. Smørrebrød, burgere, pasta, fish &amp; chips, steak frites og mere. Køkkenet er åbent 09:30–21:30." />
+  <link rel="alternate" hreflang="en" href="en/menu-lunch.html" />
+  <link rel="alternate" hreflang="da" href="menu-lunch.html" />
+  <link rel="alternate" hreflang="x-default" href="menu-lunch.html" />
+  <link rel="stylesheet" href="assets/tailwind.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors: { navy:{DEFAULT:'#1a120b',dark:'#120c06',mid:'#2a1f14',light:'#3d3024'}, gold:{DEFAULT:'#F7CD6F',dark:'#d4a843',light:'#fbe4a8'}, cream:{DEFAULT:'#f5f0e8',muted:'#a89f8c'} },
-      fontFamily: { serif:['"EB Garamond"','Georgia','serif'], sans:['"DM Sans"','system-ui','sans-serif'] }
-    }}}
-  </script>
   <style>
     body{background:#1a120b;color:#f5f0e8;font-family:'DM Sans',sans-serif;cursor:none}
     h1,h2,h3,h4{font-family:'EB Garamond',serif}
@@ -31,28 +28,40 @@
     .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
   </style>
+  <noscript>
+    <!-- noscript-fallback -->
+    <style>
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-pane.hidden, .tab-pane { display: block !important; }
+      .tab-pane:not(:first-of-type) { margin-top: 6rem; padding-top: 4rem; border-top: 1px solid rgba(61,48,36,0.5); }
+      .menu-tab { display: none !important; }
+      .marquee-inner { animation: none !important; }
+    </style>
+  </noscript>
 </head>
 <body>
   <div id="cursor-dot"></div><div id="cursor-ring"></div>
 
   <div id="mobile-menu">
     <button id="mobile-close" class="absolute top-6 right-6 text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
+    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Forside</a>
     <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
-    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
-    <a href="menu-lunch.html" class="font-serif text-2xl text-gold cursor-pointer ml-4">Lunch</a>
-    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Dinner</a>
-    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drinks</a>
-    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Our Story</a>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Morgenmad</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-gold cursor-pointer ml-4">Frokost</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Aftensmad</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drikkevarer</a>
+    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Vores Historie</a>
     <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
-    <a href="reservations.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Reservations</a>
-    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
+    <a href="private-dining.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Selskaber</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Kontakt</a>
     <div class="flex items-center gap-3 mt-2">
-      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">EN</span>
+      <a href="en/menu-lunch.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">EN</a>
       <span class="font-sans text-cream/20 text-sm">|</span>
-      <a href="da/menu-lunch.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+      <span class="font-sans text-cream text-sm tracking-widest uppercase">DA</span>
     </div>
-    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-2 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-2 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book et Bord</a>
   </div>
 
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5 bg-navy/80 backdrop-blur-sm">
@@ -63,25 +72,25 @@
           <a href="menu.html" class="nav-link text-gold text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
           <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
             <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
-              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
-              <a href="menu-lunch.html" class="block px-5 py-2.5 text-gold text-xs tracking-widest uppercase font-sans cursor-pointer">Lunch</a>
-              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Dinner</a>
-              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drinks</a>
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Morgenmad</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-gold text-xs tracking-widest uppercase font-sans cursor-pointer">Frokost</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Aftensmad</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drikkevarer</a>
             </div>
           </div>
         </div>
-        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Our Story</a>
+        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Vores Historie</a>
         <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
-        <a href="reservations.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Reservations</a>
-        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
+        <a href="private-dining.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Selskaber</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Kontakt</a>
       </div>
       <div class="hidden md:flex items-center gap-4">
         <div class="flex items-center gap-1.5">
-          <span class="font-sans text-cream text-xs tracking-widest uppercase">EN</span>
+          <a href="en/menu-lunch.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">EN</a>
           <span class="font-sans text-cream/20 text-xs px-1">|</span>
-          <a href="da/menu-lunch.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">DA</span>
         </div>
-        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book et Bord</a>
       </div>
       <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     </div>
@@ -89,123 +98,121 @@
 
   <header class="pt-40 pb-16 px-6 text-center" style="background:#120c06;">
     <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
-    <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Lunch in Nyhavn</h1>
+    <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Frokost i Nyhavn</h1>
     <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Served <strong class="text-cream">11:30</strong> to <strong class="text-cream">16:00</strong></p>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Køkkenet er åbent <strong class="text-cream">11:30</strong> til <strong class="text-cream">22:00</strong></p>
   </header>
 
   <div class="bg-navy-mid border-b border-navy-light">
     <div class="max-w-6xl mx-auto px-6 flex gap-8 overflow-x-auto">
-      <a href="menu-breakfast.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Breakfast</a>
-      <a href="menu-lunch.html" class="py-4 text-gold text-xs tracking-widest uppercase font-sans border-b border-gold cursor-pointer">Lunch</a>
-      <a href="menu-dinner.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Dinner</a>
-      <a href="menu-drinks.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Drinks</a>
+      <a href="menu-breakfast.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Morgenmad</a>
+      <a href="menu-lunch.html" class="py-4 text-gold text-xs tracking-widest uppercase font-sans border-b border-gold cursor-pointer">Frokost</a>
+      <a href="menu-dinner.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Aftensmad</a>
+      <a href="menu-drinks.html" class="py-4 text-cream/40 hover:text-cream/70 text-xs tracking-widest uppercase font-sans cursor-pointer transition-colors">Drikkevarer</a>
     </div>
   </div>
 
   <main class="max-w-6xl mx-auto px-6 py-20">
+    <!-- Featured: Nyhavn Frokostplatte -->
+    <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div class="flex-1">
+          <p class="section-label mb-3">Signatur</p>
+          <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Nyhavn Frokostplatte</h2>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Et udvalg af vores signatur-smørrebrød — en klassisk dansk frokostoplevelse. Marineret sild, karrysild, æg og rejer, røget laks, hønsesalat, roastbeef og sprødt flæsk. Serveres med rugbrød, franskbrød og smør.</p>
+        </div>
+        <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">389</span>
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
       <div>
-        <!-- Sharing Plates -->
-        <p class="section-label mb-8">Sharing Plates</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Truffle Fries</p><p class="font-sans text-cream/45 text-sm mt-1">Rustic cut fries, truffle mayonnaise and parmesan</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Glazed in hot sauce, ranch dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Honey Chicken</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy batter, tabasco infused honey &amp; ginger</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">White Fish Tacos</p><p class="font-sans text-cream/45 text-sm mt-1">Corn tortilla, lime, coriander, cabbage, chili mayo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken or braised beef, melted cheddar, guacamole, sour cream, salsa</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-        </div>
-
-        <!-- Soups & Salads -->
-        <p class="section-label mt-14 mb-8">Soups &amp; Salads</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Soup of the Season</p><p class="font-sans text-cream/45 text-sm mt-1">Served with condiments and bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chèvre Chaud Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Baby gem, gratinated goat cheese, orange, pickled onions, mustard &amp; honey vinaigrette, walnuts</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">158</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chicken Caesar Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Grilled chicken in Provence marinade, caesar dressing, croutons, mini romaine</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-        </div>
-
         <!-- Smørrebrød -->
-        <p class="section-label mt-14 mb-4">Smørrebrød</p>
-        <p class="font-sans text-cream/40 text-xs mb-8">1 pc — 135 &nbsp;/&nbsp; 2 pcs — 228 &nbsp;/&nbsp; 3 pcs — 348</p>
+        <p class="section-label mb-3">Smørrebrød</p>
+        <p class="font-sans text-cream/40 text-xs mb-8 italic">Gratis Aalborg Snaps til smørrebrød!</p>
         <div class="space-y-0">
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">2 Kinds of Herring</p><p class="font-sans text-cream/45 text-sm mt-1">Marinated and curry herring with garniture</p></div></div>
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">Gravad Salmon on Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Dill marinated salmon, mustard-dill sauce, lemon</p></div></div>
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">Chicken Salad on Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken salad, asparagus, mushrooms, bacon, cress</p></div></div>
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">Eggs &amp; Shrimps on Rye Bread</p><p class="font-sans text-cream/45 text-sm mt-1">Boiled eggs, peeled shrimps, mayonnaise, dill, lemon</p></div></div>
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">Filet of Plaice on Rye Bread</p><p class="font-sans text-cream/45 text-sm mt-1">Fried filet in bread crumbs, remoulade, lemon</p></div></div>
-          <div class="menu-item py-5"><div><p class="item-name font-serif text-xl text-cream">Roast Beef on Rye Bread</p><p class="font-sans text-cream/45 text-sm mt-1">Roasted onions, pickles, cress &amp; remoulade</p></div></div>
-        </div>
-
-        <!-- Sandwiches -->
-        <p class="section-label mt-14 mb-8">Sandwiches</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chicken &amp; Bacon Club</p><p class="font-sans text-cream/45 text-sm mt-1">Tomatoes, lettuce, bacon, mayonnaise and fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Smoked Salmon</p><p class="font-sans text-cream/45 text-sm mt-1">Smoked cheese cream, sun dried tomatoes, mixed salad, herbs dressing, cucumber, pickled onions, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kartoffelmad</p><p class="font-sans text-cream/45 text-sm mt-1">Nye danske kartofler med rygeostcreme og brunet smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marineret Sild</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk marineret sild med friske urter, kapers og rødløg på rugbrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Karrysild</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk karrysild med sprødt æble, kapers og rødløg på rugbrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg &amp; Rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Håndpillede rejer med æg, citron, dild og hjemmerørt mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprød Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødstegt rødspættefilet med håndpillede rejer, mayonnaise, dild, kørvel og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget Laks</p><p class="font-sans text-cream/45 text-sm mt-1">Luftige røræg, purløg, tomat &amp; asparges</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><div class="flex items-center gap-2 flex-wrap"><p class="item-name font-serif text-xl text-cream">Nyhavn Stjerneskud</p><span class="font-sans text-[0.6rem] tracking-[0.2em] uppercase text-gold/80 border border-gold/40 px-2 py-0.5">Signatur</span></div><p class="font-sans text-cream/45 text-sm mt-1">Klassisk stjerneskud med sprødstegt og dampet fiskefilet, rejer, asparges og dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk hønsesalat på sprødt surdejsbrød med syltede svampe, asparges og sprød bacon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><div class="flex items-center gap-2 flex-wrap"><p class="item-name font-serif text-xl text-cream">Roastbeef Deluxe</p><span class="font-sans text-[0.6rem] tracking-[0.2em] uppercase text-gold/80 border border-gold/40 px-2 py-0.5">Signatur</span></div><p class="font-sans text-cream/45 text-sm mt-1">Roastbeef med sprøde løg, pickles, remoulade og friskrevet peberrod</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">199</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friteret Brie</p><p class="font-sans text-cream/45 text-sm mt-1">Sprød friteret brie med solbærsyltetøj og ristet brød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
         </div>
       </div>
 
       <div>
-        <!-- Burgers -->
-        <p class="section-label mb-8">The Burgers</p>
+        <!-- Små Deleretter -->
+        <p class="section-label mb-8">Små Deleretter</p>
         <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Classic</p><p class="font-sans text-cream/45 text-sm mt-1">Tomatoes, lettuce, onions, pickled cucumber, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cheese &amp; Bacon</p><p class="font-sans text-cream/45 text-sm mt-1">Tomatoes, lettuce, onions, pickled cucumber, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crispy Chicken</p><p class="font-sans text-cream/45 text-sm mt-1">Tomatoes, lettuce, onions, pickled cucumber, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Trøffel Fritter</p><p class="font-sans text-cream/45 text-sm mt-1">Sprøde kartofler med trøffel, parmesan &amp; srirachamayo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprøde Blæksprutter</p><p class="font-sans text-cream/45 text-sm mt-1">Små friterede calamari, aioli &amp; citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Korean Fried Chicken</p><p class="font-sans text-cream/45 text-sm mt-1">Sprød kylling vendt i hoisinsauce, forårsløg, sesamfrø &amp; srirachamayo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegt svinekød i en blød briochebolle, cremet coleslaw og BBQ-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0 text-right">169 / 229<br><span class="text-cream/40 text-xs">2 stk / 3 stk</span></span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Kyllingevinger vendt i BBQ sauce med ranch og koriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos</p><p class="font-sans text-cream/45 text-sm mt-1">Tortillachips med cheddar, jalapeños, salsa, guacamole og creme fraiche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0 text-right">189 / 249<br><span class="text-cream/40 text-xs">alm. / kylling</span></span></div></div>
         </div>
 
-        <!-- Fresh Pasta -->
-        <p class="section-label mt-14 mb-8">Fresh Pasta</p>
+        <!-- Klassikere -->
+        <p class="section-label mt-14 mb-8">Klassikere</p>
         <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Truffle Mushroom Tagliatelle</p><p class="font-sans text-cream/45 text-sm mt-1">Mushrooms, truffled cream sauce, parsley, parmesan</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Carbonara</p><p class="font-sans text-cream/45 text-sm mt-1">Fresh rigatoni, pancetta, eggs, black pepper, parmesan, extra virgin olive oil</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Baked Salmon Pasta</p><p class="font-sans text-cream/45 text-sm mt-1">Pappardelle, dill, asparagus, cream, spinach, capers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-4 ml-6"><p class="font-sans text-cream/40 text-xs tracking-widest uppercase">Add seared filet of beef: +150</p></div>
-        </div>
-
-        <!-- Best Sellers -->
-        <p class="section-label mt-14 mb-8">Best Sellers</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fish N Chips</p><p class="font-sans text-cream/45 text-sm mt-1">Battered white fish, sauce tartare, lemon, fries</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Shooting Star</p><p class="font-sans text-cream/45 text-sm mt-1">Fried and steamed filet of plaice, rosa sauce, asparagus, caviar</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Meat Loaf</p><p class="font-sans text-cream/45 text-sm mt-1">Wrapped in bacon, potato gratin, lingonberry, brown sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
-        </div>
-
-        <!-- Main Courses -->
-        <p class="section-label mt-14 mb-8">Main Courses</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Danish Salmon</p><p class="font-sans text-cream/45 text-sm mt-1">Asparagus, buttered potatoes in dill, hollandaise sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Veal schnitzel, lingonberry sauce, potato salad, pickles</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Braised Lamb Shank</p><p class="font-sans text-cream/45 text-sm mt-1">Potato purée and carrots</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">248</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak Frites</p><p class="font-sans text-cream/45 text-sm mt-1">Peppercorn sauce, fries, mixed green salad, garlic butter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">295</span></div></div>
-        </div>
-
-        <!-- Desserts -->
-        <p class="section-label mt-14 mb-8">Desserts</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Sticky Toffee Pudding &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Crème Brûlée</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Chocolate Lava Cake &amp; Ice Cream</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><p class="item-name font-serif text-xl text-cream">Apple Crumble Pie</p><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nyhavn 17 Burger</p><p class="font-sans text-cream/45 text-sm mt-1">Saftig okseburger med cheddar, bacon, salat, tomat, pickles og husets signatursauce, serveret med sprøde pommes frites</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><div class="flex items-center gap-2 flex-wrap"><p class="item-name font-serif text-xl text-cream">Fish &amp; Chips</p><span class="font-sans text-[0.6rem] tracking-[0.2em] uppercase text-gold/80 border border-gold/40 px-2 py-0.5">Signatur</span></div><p class="font-sans text-cream/45 text-sm mt-1">Ølpaneret fisk med gyldne fries, hjemmelavet tartarsauce og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stegt Flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Sprød flæsk med persillesovs, syltede rødbeder, kartofler &amp; sennep</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, karrymayonnaise, tomat, salat, bacon &amp; sprøde pommes frites</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kalveschnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk paneret kalveschnitzel med kapers, ansjos, peberrod og kartofler</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0 text-right">349 / 459<br><span class="text-cream/40 text-xs">lille / stor</span></span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Dampede majs med smør, coleslaw, sprøde pommes frites, BBQ sovs &amp; en hel side ribs</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Laks Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Ovnbagt dansk laks, dampede asparges, kartofler &amp; sauce hollandaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">329</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cæsarsalat</p><p class="font-sans text-cream/45 text-sm mt-1">Sprød romainesalat med kylling, parmesan, croutoner og klassisk dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">259</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak Frites</p><p class="font-sans text-cream/45 text-sm mt-1">Saftig New York Strip 350g serveret med frisk grøn salat og sprøde pommes frites &amp; bearnaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
         </div>
       </div>
     </div>
 
     <div class="mt-24 pt-16 border-t border-navy-light text-center">
-      <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK.</p>
+      <p class="font-sans text-cream/50 text-sm mb-2">Alle priser er i DKK.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-        <a href="menu-drinks.html" class="inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">Drinks Menu →</a>
-        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserve a Table</a>
+        <a href="menu-drinks.html" class="inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">Drikkevarer Menu →</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Reserver et Bord</a>
       </div>
     </div>
   </main>
 
+  <!-- Gallery -->
+  <section class="bg-navy-dark py-20 px-6 border-t border-navy-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">Galleri</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-cream mb-4">Et glimt indefra</h2>
+        <div class="w-12 h-px bg-gold mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01146.jpg" alt="Nyhavn 17 facade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/new1.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/new2.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01079.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/new3.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01248.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/new4.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01251.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/new5.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01291.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01316.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+        <div class="aspect-square overflow-hidden group"><img src="assets/images/hero/DSC01324.jpg" alt="Nyhavn 17" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+      </div>
+    </div>
+  </section>
+
   <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-      <div><p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Traditional Danish brasserie. Open daily from 09:30.</p></div>
-      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p><nav class="flex flex-col gap-3"><a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Home</a><a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Our Story</a><a href="reservations.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Reservations</a><a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Contact</a></nav></div>
-      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Us</p><address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address></div>
+      <div><p class="font-serif text-2xl text-gold mb-4">Nyhavn 17</p><p class="font-sans text-cream/50 text-sm leading-relaxed">Nyhavns ældste gastropub med traditionel dansk mad, smørrebrød, klassiske popretter og meget mere.</p></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigation</p><nav class="flex flex-col gap-3"><a href="index.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Forside</a><a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Vores Historie</a><a href="live-events.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Live Events</a><a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Kontakt</a></nav></div>
+      <div><p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Os</p><address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">Nyhavn 17, 1051 København K<br /><a href="tel:+4533125419" class="hover:text-cream transition-colors">+45 33 12 54 19</a></address></div>
     </div>
-    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. All rights reserved.</p></div>
+    <div class="border-t border-navy-light pt-8"><p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. Alle rettigheder forbeholdes.</p></div>
   </footer>
 
   <script>

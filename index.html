@@ -1,124 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nyhavn 17 — Traditional Danish Brasserie, Copenhagen</title>
-  <meta name="description" content="A beloved Copenhagen brasserie since 1936. Breakfast, lunch and dinner on the iconic Nyhavn canal. Book your table today." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>Nyhavn 17 — Traditionelt Dansk Gastropub, København</title>
+  <meta name="description" content="Et elsket københavnsk gastropub siden 1936. Morgenmad, frokost og middag ved den ikoniske Nyhavn-kanal. Book dit bord i dag." />
+  <link rel="alternate" hreflang="en" href="en/index.html" />
+  <link rel="alternate" hreflang="da" href="index.html" />
+  <link rel="alternate" hreflang="x-default" href="index.html" />
+  <link rel="stylesheet" href="assets/tailwind.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { DEFAULT: '#1a120b', dark: '#120c06', mid: '#2a1f14', light: '#3d3024' },
-            gold: { DEFAULT: '#F7CD6F', dark: '#d4a843', light: '#fbe4a8' },
-            cream: { DEFAULT: '#f5f0e8', muted: '#a89f8c' },
-          },
-          fontFamily: {
-            serif: ['"EB Garamond"', 'Georgia', 'serif'],
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
   <style>
     body { background-color: #1a120b; color: #f5f0e8; font-family: 'DM Sans', sans-serif; cursor: none; }
     h1, h2, h3 { font-family: 'EB Garamond', serif; }
-
-    /* Custom cursor */
     #cursor-dot { position: fixed; width: 8px; height: 8px; background: #F7CD6F; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, background 0.2s; }
     #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1.5px solid rgba(247,205,111,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, border-color 0.3s; }
-    body.cursor-hover #cursor-dot { transform: translate(-50%, -50%) scale(2.5); background: #F7CD6F; }
+    body.cursor-hover #cursor-dot { transform: translate(-50%, -50%) scale(2.5); }
     body.cursor-hover #cursor-ring { width: 48px; height: 48px; border-color: rgba(247,205,111,0.8); }
-
-    /* Nav */
     #nav { transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s; }
     #nav.scrolled { background: rgba(26,18,11,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(247,205,111,0.1); }
-
-    /* Hero */
     #hero { position: relative; height: 100vh; overflow: hidden; }
-    #hero-bg { position: absolute; inset: 0; background-image: url('assets/images/hero-canal.jpg'); background-size: cover; background-position: center; will-change: transform; }
-    #hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(18,12,6,0.3) 0%, rgba(18,12,6,0.6) 60%, rgba(18,12,6,0.95) 100%); }
-
-    /* Scroll reveal */
+    #hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; filter: brightness(1.1); }
+    #hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(18,12,6,0.05) 0%, rgba(18,12,6,0.2) 60%, rgba(18,12,6,0.7) 100%); z-index: 2; }
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* Gold divider */
     .gold-divider { width: 48px; height: 1px; background: #F7CD6F; margin: 0 auto; }
-
-    /* Nav underline */
     .nav-link { position: relative; }
     .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #F7CD6F; transition: width 0.3s ease; transform-origin: left; }
     .nav-link:hover::after { width: 100%; }
-
-    /* Tilt cards */
     .tilt-card { transform-style: preserve-3d; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-
-    /* Pulsing CTA */
     @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(247,205,111,0.4); } 70% { box-shadow: 0 0 0 14px rgba(247,205,111,0); } 100% { box-shadow: 0 0 0 0 rgba(247,205,111,0); } }
     .pulse-cta { animation: pulse-ring 2.5s infinite; }
-
-    /* Marquee */
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .marquee-inner { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
     .marquee-inner:hover { animation-play-state: paused; }
-
-    /* Counter */
-    .stat-num { font-family: 'EB Garamond', serif; }
-
-    /* Mobile menu */
     #mobile-menu { display: none; position: fixed; inset: 0; background: rgba(18,12,6,0.98); z-index: 40; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; }
     #mobile-menu.open { display: flex; }
-
-    /* Section image hover */
     .img-reveal { overflow: hidden; }
     .img-reveal img { transition: transform 0.7s ease; }
     .img-reveal:hover img { transform: scale(1.04); }
-
     .dropdown-menu{opacity:0;visibility:hidden;transform:translateY(4px);transition:all .2s ease}
     .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
-    @media (prefers-reduced-motion: reduce) { .reveal, #hero-bg, .marquee-inner { transition: none; animation: none; transform: none; opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .reveal, #hero-video, .marquee-inner { transition: none; animation: none; transform: none; } }
   </style>
+  <noscript>
+    <!-- noscript-fallback -->
+    <style>
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .tab-pane.hidden, .tab-pane { display: block !important; }
+      .tab-pane:not(:first-of-type) { margin-top: 6rem; padding-top: 4rem; border-top: 1px solid rgba(61,48,36,0.5); }
+      .menu-tab { display: none !important; }
+      .marquee-inner { animation: none !important; }
+    </style>
+  </noscript>
 </head>
 <body>
-
-  <!-- Custom cursor -->
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
 
-  <!-- Mobile menu -->
   <div id="mobile-menu" role="dialog" aria-label="Navigation menu">
-    <button id="mobile-close" aria-label="Close menu" class="absolute top-6 right-6 text-cream text-3xl cursor-pointer">
+    <button id="mobile-close" aria-label="Luk menu" class="absolute top-6 right-6 text-cream text-3xl cursor-pointer">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Home</a>
+    <a href="index.html" class="font-serif text-4xl text-gold cursor-pointer">Forside</a>
     <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase">Menu</p>
-    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Breakfast</a>
-    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Lunch</a>
-    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Dinner</a>
-    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drinks</a>
-    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Our Story</a>
+    <a href="menu-breakfast.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Morgenmad</a>
+    <a href="menu-lunch.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Frokost</a>
+    <a href="menu-dinner.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Aftensmad</a>
+    <a href="menu-drinks.html" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drikkevarer</a>
+    <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Vores Historie</a>
     <a href="live-events.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
-    <a href="reservations.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Reservations</a>
-    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Contact</a>
+    <a href="private-dining.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Selskaber</a>
+    <a href="contact.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Kontakt</a>
     <div class="flex items-center gap-3 mt-2">
-      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">EN</span>
+      <a href="en/index.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">EN</a>
       <span class="font-sans text-cream/20 text-sm">|</span>
-      <a href="da/index.html" class="font-sans text-cream/45 hover:text-gold text-sm tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+      <span class="font-sans text-cream/60 text-sm tracking-widest uppercase">DA</span>
     </div>
-    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-4 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book a Table</a>
+    <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="mt-4 px-8 py-3 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors">Book et Bord</a>
   </div>
 
-  <!-- Navigation -->
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-5">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="index.html" class="font-serif text-2xl text-gold tracking-wide cursor-pointer">NYHAVN 17</a>
@@ -127,345 +93,287 @@
           <a href="menu.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer inline-flex items-center gap-1">Menu <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
           <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[200px]">
             <div class="bg-navy-mid/95 backdrop-blur-md border border-navy-light py-3">
-              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Breakfast</a>
-              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Lunch</a>
-              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Dinner</a>
-              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drinks</a>
+              <a href="menu-breakfast.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Morgenmad</a>
+              <a href="menu-lunch.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Frokost</a>
+              <a href="menu-dinner.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Aftensmad</a>
+              <a href="menu-drinks.html" class="block px-5 py-2.5 text-cream/60 hover:text-gold text-xs tracking-widest uppercase font-sans transition-colors cursor-pointer">Drikkevarer</a>
             </div>
           </div>
         </div>
-        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Our Story</a>
+        <a href="about.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Vores Historie</a>
         <a href="live-events.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Live Events</a>
-        <a href="reservations.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Reservations</a>
-        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Contact</a>
+        <a href="private-dining.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Selskaber</a>
+        <a href="contact.html" class="nav-link text-cream/80 hover:text-cream text-sm tracking-widest uppercase font-sans cursor-pointer transition-colors">Kontakt</a>
       </div>
       <div class="hidden md:flex items-center gap-4">
         <div class="flex items-center gap-1.5">
-          <span class="font-sans text-cream text-xs tracking-widest uppercase">EN</span>
+          <a href="en/index.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">EN</a>
           <span class="font-sans text-cream/20 text-xs px-1">|</span>
-          <a href="da/index.html" class="font-sans text-cream/40 hover:text-cream text-xs tracking-widest uppercase cursor-pointer transition-colors">DA</a>
+          <span class="font-sans text-cream text-xs tracking-widest uppercase">DA</span>
         </div>
-        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors pulse-cta">Book a Table</a>
+        <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors pulse-cta">Book et Bord</a>
       </div>
-      <button id="hamburger" class="md:hidden text-cream cursor-pointer" aria-label="Open menu">
+      <button id="hamburger" class="md:hidden text-cream cursor-pointer" aria-label="Åbn menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
       </button>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="hero" aria-label="Hero — Nyhavn canal view">
-    <div id="hero-bg"></div>
+  <section id="hero" aria-label="Nyhavn 17 — billeder af restauranten">
+    <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="../assets/images/hero/DSC01146.jpg" aria-label="Nyhavn 17 — stemning fra restauranten">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
     <div id="hero-overlay"></div>
     <div class="relative z-10 h-full flex flex-col justify-end pb-24 px-6">
       <div class="max-w-6xl mx-auto w-full">
-        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Copenhagen · Since 1936</p>
-        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-3xl">A Table at the<br /><em>Water's Edge</em></h1>
-        <p class="font-sans text-cream/70 text-lg max-w-md mb-10 leading-relaxed">Four generations of warmth, craft, and good food — right on the Nyhavn canal.</p>
+        <p class="font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">København · Siden 1936</p>
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-3xl">Et bord ved<br /><em>vandkanten</em></h1>
+        <p class="font-sans text-cream/70 text-lg max-w-md mb-10 leading-relaxed">Fire generationer af varme, håndværk og god mad — lige ved Nyhavn-kanalen.</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors text-center">Reserve a Table</a>
-          <a href="menu.html" class="inline-block px-10 py-4 border border-cream/30 text-cream font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:border-gold hover:text-gold transition-colors text-center">View the Menu</a>
+          <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors text-center">Reserver et Bord</a>
+          <a href="menu.html" class="inline-block px-10 py-4 border border-cream/30 text-cream font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:border-gold hover:text-gold transition-colors text-center">Se Menuen</a>
         </div>
       </div>
     </div>
-    <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-      <span class="text-cream/40 text-xs tracking-widest uppercase font-sans">Scroll</span>
+      <span class="text-cream/40 text-xs tracking-widest uppercase font-sans">Rul</span>
       <div class="w-px h-10 bg-gradient-to-b from-cream/40 to-transparent"></div>
     </div>
   </section>
 
-  <!-- Opening hours strip -->
   <section class="bg-navy-mid border-y border-navy-light py-4">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-      <p class="font-sans text-cream/60 tracking-widest uppercase text-xs">Open Daily</p>
+      <p class="font-sans text-cream/60 tracking-widest uppercase text-xs">Åbent Dagligt</p>
       <p class="font-serif text-cream text-lg">09:30 — 00:30</p>
       <div class="flex gap-6 text-cream/60 text-xs tracking-wider uppercase font-sans">
         <span>+45 33 12 54 19</span>
         <span>·</span>
-        <span>Nyhavn 17, 1051 Copenhagen</span>
+        <span>Nyhavn 17, 1051 København</span>
       </div>
     </div>
   </section>
 
-  <!-- Highlights -->
   <section class="py-24 px-6 bg-navy">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">What We Offer</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream mb-6">Something for Every Hour</h2>
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">Hvad vi tilbyder</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream mb-6">Noget for enhver time</h2>
         <div class="reveal reveal-delay-2 gold-divider"></div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Breakfast -->
         <a href="menu-breakfast.html" class="tilt-card reveal reveal-delay-1 group block p-8 bg-navy-mid border border-navy-light hover:border-gold/40 transition-all cursor-pointer">
           <div class="mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.2" class="mb-4"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Breakfast</h3>
+            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Morgenmad</h3>
             <div class="w-8 h-px bg-gold/40 group-hover:bg-gold transition-all duration-300 group-hover:w-16"></div>
           </div>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Pastries, eggs, pancakes, avocado toast and our famous brunch platter. From 09:30.</p>
-          <p class="font-sans text-gold/70 text-xs tracking-widest uppercase group-hover:text-gold transition-colors">From 25 DKK →</p>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Croissanter, æg, pandekager, avocado toast og vores berømte brunchtallerken. Fra kl. 09:30.</p>
         </a>
-        <!-- Lunch -->
         <a href="menu-lunch.html" class="tilt-card reveal reveal-delay-2 group block p-8 bg-navy-mid border border-gold/30 hover:border-gold transition-all cursor-pointer">
           <div class="mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.2" class="mb-4"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Lunch</h3>
+            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Frokost</h3>
             <div class="w-8 h-px bg-gold transition-all duration-300 group-hover:w-16"></div>
           </div>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Smørrebrød, burgers, salads, sharing plates and more. Served 11:30 to 16:00.</p>
-          <p class="font-sans text-gold/70 text-xs tracking-widest uppercase group-hover:text-gold transition-colors">From 69 DKK →</p>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Smørrebrød, burgere, salater, deleretter og mere. Serveres 11:30 til 16:00.</p>
         </a>
-        <!-- Dinner -->
         <a href="menu-dinner.html" class="tilt-card reveal reveal-delay-2 group block p-8 bg-navy-mid border border-gold/30 hover:border-gold transition-all cursor-pointer">
           <div class="mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.2" class="mb-4"><path d="M12 2v6l3 3"/><circle cx="12" cy="14" r="8"/></svg>
-            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Dinner</h3>
+            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Aftensmad</h3>
             <div class="w-8 h-px bg-gold transition-all duration-300 group-hover:w-16"></div>
           </div>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Steak frites, pasta, schnitzel, fish &amp; chips and Danish classics. Served 17:00 to 21:30.</p>
-          <p class="font-sans text-gold/70 text-xs tracking-widest uppercase group-hover:text-gold transition-colors">From 69 DKK →</p>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Steak frites, pasta, schnitzel, fish &amp; chips og danske klassikere. Serveres 17:00 til 21:30.</p>
         </a>
-        <!-- Drinks -->
         <a href="menu-drinks.html" class="tilt-card reveal reveal-delay-3 group block p-8 bg-navy-mid border border-navy-light hover:border-gold/40 transition-all cursor-pointer">
           <div class="mb-6">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F7CD6F" stroke-width="1.2" class="mb-4"><path d="M8 22h8M12 11v11M20 2H4l4 9a4 4 0 0 0 8 0l4-9z"/></svg>
-            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Drinks</h3>
+            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-gold transition-colors">Drikkevarer</h3>
             <div class="w-8 h-px bg-gold/40 group-hover:bg-gold transition-all duration-300 group-hover:w-16"></div>
           </div>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Wine, champagne, cocktails and draught beer. Bar open until midnight — weekends until 01:30.</p>
-          <p class="font-sans text-gold/70 text-xs tracking-widest uppercase group-hover:text-gold transition-colors">From 45 DKK →</p>
+          <p class="font-sans text-cream/60 text-sm leading-relaxed mb-6">Vin, champagne, cocktails og fadøl. Bar åben til midnat — weekender til 01:30.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Story teaser -->
   <section class="py-24 px-6 bg-navy-dark">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       <div class="img-reveal reveal rounded-sm overflow-hidden aspect-[4/3]">
-        <img src="assets/images/interior.jpg" alt="Warm candlelit interior of Nyhavn 17 brasserie" class="w-full h-full object-cover" />
+        <img src="assets/images/new2.jpg" alt="En klassisk ret og vin hos Nyhavn 17" class="w-full h-full object-cover" />
       </div>
       <div>
-        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Our Story</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream leading-snug mb-6">Four Generations,<br /><em>One Address</em></h2>
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Vores Historie</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream leading-snug mb-6">Fire generationer,<br /><em>én adresse</em></h2>
         <div class="reveal reveal-delay-1 w-10 h-px bg-gold mb-8"></div>
-        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed mb-5">What started as a sailor's tavern in 1936 has grown into one of Copenhagen's most cherished places to eat and drink. The canal outside has changed. The city has changed. But the warmth inside Nyhavn 17 has not.</p>
-        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed mb-10">Today, father and son carry the tradition into its fourth generation — European craft with a very Danish soul.</p>
-        <a href="about.html" class="reveal reveal-delay-3 inline-block font-sans text-gold text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:border-gold transition-colors cursor-pointer">Read our full story</a>
+        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed mb-5">Det der begyndte som en sømandskro i 1936, er vokset til et af Københavns mest elskede steder at spise og drikke. Kanalen udenfor har ændret sig. Byen har ændret sig. Men varmen indenfor Nyhavn 17 er den samme.</p>
+        <p class="reveal reveal-delay-2 font-sans text-cream/65 leading-relaxed mb-10">I dag fører far og søn traditionen videre ind i dens fjerde generation — europæisk håndværk med en meget dansk sjæl.</p>
+        <a href="about.html" class="reveal reveal-delay-3 inline-block font-sans text-gold text-sm tracking-widest uppercase border-b border-gold/40 pb-1 hover:border-gold transition-colors cursor-pointer">Læs vores fulde historie</a>
       </div>
     </div>
   </section>
 
-  <!-- Menu preview -->
   <section class="py-24 px-6 bg-navy">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">The Kitchen</p>
-        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream mb-4">A Few Favourites</h2>
+        <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-3">Køkkenet</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-5xl text-cream mb-4">Nogle favoritter</h2>
         <div class="reveal reveal-delay-2 gold-divider mb-6"></div>
-        <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-md mx-auto text-sm leading-relaxed">Danish classics and European inspiration, made with care every single day.</p>
+        <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-md mx-auto text-sm leading-relaxed">Danske klassikere og europæisk inspiration, lavet med omsorg hver eneste dag.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="reveal reveal-delay-1 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Shooting Star</h3>
-            <span class="font-sans text-gold text-sm ml-4">198</span>
+            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Nyhavn Stjerneskud</h3>
+            <span class="font-sans text-gold text-sm ml-4">289</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Fried and steamed filet of plaice, rosa sauce, asparagus, caviar</p>
+          <p class="font-sans text-cream/50 text-sm">Klassisk stjerneskud med sprødstegt og dampet fiskefilet, rejer, asparges og dressing</p>
         </div>
         <div class="reveal reveal-delay-2 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
             <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Steak Frites</h3>
-            <span class="font-sans text-gold text-sm ml-4">295</span>
+            <span class="font-sans text-gold text-sm ml-4">389</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Peppercorn sauce, fries, mixed green salad, garlic butter</p>
+          <p class="font-sans text-cream/50 text-sm">Saftig New York Strip 350g med frisk grøn salat, sprøde pommes frites &amp; bearnaisesauce</p>
         </div>
         <div class="reveal reveal-delay-3 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Chicken Caesar Salad</h3>
-            <span class="font-sans text-gold text-sm ml-4">169</span>
+            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Cæsarsalat</h3>
+            <span class="font-sans text-gold text-sm ml-4">259</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Grilled chicken in Provence marinade, caesar dressing, croutons</p>
+          <p class="font-sans text-cream/50 text-sm">Sprød romainesalat med kylling, parmesan, croutoner og klassisk dressing</p>
         </div>
         <div class="reveal reveal-delay-1 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Fish N Chips</h3>
-            <span class="font-sans text-gold text-sm ml-4">198</span>
+            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Fish &amp; Chips</h3>
+            <span class="font-sans text-gold text-sm ml-4">289</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Battered white fish, sauce tartare, lemon, fries</p>
+          <p class="font-sans text-cream/50 text-sm">Ølpaneret fisk med gyldne fries, hjemmelavet tartarsauce og citron</p>
         </div>
         <div class="reveal reveal-delay-2 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Wienerschnitzel</h3>
-            <span class="font-sans text-gold text-sm ml-4">248</span>
+            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Kalveschnitzel</h3>
+            <span class="font-sans text-gold text-sm ml-4">349</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Veal schnitzel, lingonberry sauce, potato salad, pickles</p>
+          <p class="font-sans text-cream/50 text-sm">Klassisk paneret kalveschnitzel med kapers, ansjos, peberrod og kartofler</p>
         </div>
         <div class="reveal reveal-delay-3 p-6 border-t border-gold/30 hover:border-gold transition-colors group cursor-default">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Crème Brûlée</h3>
-            <span class="font-sans text-gold text-sm ml-4">99</span>
+            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Nyhavn 17 Burger</h3>
+            <span class="font-sans text-gold text-sm ml-4">269</span>
           </div>
-          <p class="font-sans text-cream/50 text-sm">Classic caramelised custard</p>
+          <p class="font-sans text-cream/50 text-sm">Saftig okseburger med cheddar, bacon, salat, tomat, pickles og husets signatursauce, serveret med sprøde pommes frites</p>
         </div>
       </div>
       <div class="text-center mt-14">
-        <a href="menu.html" class="reveal inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">See the Full Menu</a>
+        <a href="menu.html" class="reveal inline-block px-10 py-4 border border-gold/40 text-gold font-sans text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all cursor-pointer">Se den Fulde Menu</a>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
   <section class="py-20 px-6 bg-navy-mid border-y border-navy-light">
     <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       <div class="reveal">
-        <p class="stat-num font-serif text-5xl text-gold mb-2" data-target="1936">1936</p>
-        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Founded</p>
+        <p class="font-serif text-5xl text-gold mb-2">1936</p>
+        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Grundlagt</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <p class="stat-num font-serif text-5xl text-gold mb-2"><span data-target="4">0</span></p>
-        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Generations</p>
+        <p class="font-serif text-5xl text-gold mb-2"><span data-target="4">0</span></p>
+        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Generationer</p>
       </div>
       <div class="reveal reveal-delay-2">
-        <p class="stat-num font-serif text-5xl text-gold mb-2"><span data-target="365">0</span></p>
-        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Days a Year</p>
+        <p class="font-serif text-5xl text-gold mb-2"><span data-target="365">0</span></p>
+        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Dage om Året</p>
       </div>
       <div class="reveal reveal-delay-3">
-        <p class="stat-num font-serif text-5xl text-gold mb-2">15<sup class="text-2xl">hr</sup></p>
-        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Open Daily</p>
+        <p class="font-serif text-5xl text-gold mb-2">15<sup class="text-2xl">t</sup></p>
+        <p class="font-sans text-cream/50 text-xs tracking-widest uppercase">Åbent Dagligt</p>
       </div>
     </div>
   </section>
 
-  <!-- Marquee -->
   <section class="py-6 bg-navy-dark overflow-hidden border-b border-navy-light">
     <div class="marquee-inner">
       <span class="font-serif italic text-cream/30 text-xl px-8">Smørrebrød</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Oysters</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Bouillabaisse</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Champagne</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Lobster</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Tartare</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Wagyu</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Crème Brûlée</span><span class="text-gold/30 px-2">·</span>
-      <!-- Duplicate for seamless loop -->
+      <span class="font-serif italic text-cream/30 text-xl px-8">Nyhavn Stjerneskud</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Fish &amp; Chips</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Roastbeef Deluxe</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Nyhavn 17 Burger</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Wienerschnitzel</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Steak Frites</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Frokostplatte</span><span class="text-gold/30 px-2">·</span>
       <span class="font-serif italic text-cream/30 text-xl px-8">Smørrebrød</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Oysters</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Bouillabaisse</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Champagne</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Lobster</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Tartare</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Wagyu</span><span class="text-gold/30 px-2">·</span>
-      <span class="font-serif italic text-cream/30 text-xl px-8">Crème Brûlée</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Nyhavn Stjerneskud</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Fish &amp; Chips</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Roastbeef Deluxe</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Nyhavn 17 Burger</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Wienerschnitzel</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Steak Frites</span><span class="text-gold/30 px-2">·</span>
+      <span class="font-serif italic text-cream/30 text-xl px-8">Frokostplatte</span><span class="text-gold/30 px-2">·</span>
     </div>
   </section>
 
-  <!-- Reservation CTA -->
   <section class="py-32 px-6 relative overflow-hidden" style="background: #120c06;">
     <div class="absolute inset-0 opacity-10" style="background-image: url('assets/images/hero-canal.jpg'); background-size: cover; background-position: center;"></div>
     <div class="relative z-10 max-w-2xl mx-auto text-center">
       <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
-      <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-6xl text-cream mb-6">Come as You Are</h2>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl md:text-6xl text-cream mb-6">Kom som du er</h2>
       <div class="reveal reveal-delay-1 gold-divider mb-8"></div>
-      <p class="reveal reveal-delay-2 font-sans text-cream/60 mb-10 leading-relaxed">Whether you're after a morning coffee, a long lunch, or a late-night glass of Bordeaux — there's always a place at the table.</p>
-      <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="reveal reveal-delay-3 inline-block px-12 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors pulse-cta">Book Your Table</a>
+      <p class="reveal reveal-delay-2 font-sans text-cream/60 mb-10 leading-relaxed">Uanset om du ønsker en morgenkage, en lang frokost eller et sent glas Bordeaux — der er altid plads ved bordet.</p>
+      <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="reveal reveal-delay-3 inline-block px-12 py-4 bg-gold text-navy font-sans font-medium tracking-widest text-sm uppercase cursor-pointer hover:bg-gold-light transition-colors pulse-cta">Book Dit Bord</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-navy-dark border-t border-navy-light py-16 px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
       <div>
         <p class="font-serif text-2xl text-cream mb-4">Nyhavn 17</p>
-        <p class="font-sans text-cream/50 text-sm leading-relaxed">Traditional Danish brasserie on Copenhagen's iconic canal. Open daily, 09:30 to 00:30.</p>
+        <p class="font-sans text-cream/50 text-sm leading-relaxed">Nyhavns ældste gastropub med traditionel dansk mad, smørrebrød, klassiske popretter og meget mere.</p>
       </div>
       <div>
-        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigate</p>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Navigation</p>
         <nav class="flex flex-col gap-3">
           <a href="menu.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Menu</a>
-          <a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Our Story</a>
-          <a href="reservations.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Reservations</a>
-          <a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Contact</a>
+          <a href="about.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Vores Historie</a>
+          <a href="contact.html" class="font-sans text-cream/60 hover:text-cream text-sm cursor-pointer transition-colors">Kontakt</a>
         </nav>
       </div>
       <div>
-        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Us</p>
+        <p class="font-sans text-gold text-xs tracking-widest uppercase mb-5">Find Os</p>
         <address class="not-italic font-sans text-cream/60 text-sm leading-relaxed">
-          Nyhavn 17<br />1051 København K<br />Denmark<br /><br />
+          Nyhavn 17<br />1051 København K<br />Danmark<br /><br />
           <a href="tel:+4533125419" class="hover:text-cream transition-colors cursor-pointer">+45 33 12 54 19</a><br />
           <a href="mailto:info@nyhavn17.dk" class="hover:text-cream transition-colors cursor-pointer">info@nyhavn17.dk</a>
         </address>
       </div>
     </div>
     <div class="border-t border-navy-light pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. All rights reserved.</p>
-      <p class="font-sans text-cream/30 text-xs">Open daily 09:30–00:30</p>
+      <p class="font-sans text-cream/30 text-xs">© 2024 Nyhavn 17. Alle rettigheder forbeholdes.</p>
+      <p class="font-sans text-cream/30 text-xs">Åbent dagligt 09:30–00:30</p>
     </div>
   </footer>
 
   <script>
-    // Custom cursor
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
+    const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
     let ringX = 0, ringY = 0, mouseX = 0, mouseY = 0;
     document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px'; });
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
+    document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover')); el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover')); });
     (function animateRing() { ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12; ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px'; requestAnimationFrame(animateRing); })();
-
-    // Sticky nav
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
-
-    // Parallax hero
-    const heroBg = document.getElementById('hero-bg');
-    window.addEventListener('scroll', () => { heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`; });
-
-    // Mobile menu
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+      window.addEventListener('scroll', () => { heroVideo.style.transform = `translateY(${window.scrollY * 0.4}px)`; });
+    }
     document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
     document.getElementById('mobile-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // 3D tilt cards
     document.querySelectorAll('.tilt-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = e.clientX - r.left, y = e.clientY - r.top;
-        const cx = r.width / 2, cy = r.height / 2;
-        const rx = ((y - cy) / cy) * -6, ry = ((x - cx) / cx) * 6;
-        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
-        card.style.boxShadow = `0 16px 40px rgba(0,0,0,0.4)`;
-      });
+      card.addEventListener('mousemove', e => { const r = card.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; const cx = r.width/2, cy = r.height/2; card.style.transform = `perspective(800px) rotateX(${((y-cy)/cy)*-6}deg) rotateY(${((x-cx)/cx)*6}deg) translateY(-4px)`; card.style.boxShadow = `0 16px 40px rgba(0,0,0,0.4)`; });
       card.addEventListener('mouseleave', () => { card.style.transform = ''; card.style.boxShadow = ''; });
     });
-
-    // Stat counters
-    const statObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const el = e.target;
-          const target = parseInt(el.getAttribute('data-target'));
-          if (!target) return;
-          let current = 0;
-          const step = Math.max(1, Math.floor(target / 60));
-          const timer = setInterval(() => {
-            current = Math.min(current + step, target);
-            el.textContent = current;
-            if (current >= target) clearInterval(timer);
-          }, 20);
-          statObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
+    const statObserver = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { const el = e.target; const target = parseInt(el.getAttribute('data-target')); if (!target) return; let current = 0; const step = Math.max(1, Math.floor(target/60)); const timer = setInterval(() => { current = Math.min(current+step, target); el.textContent = current; if (current >= target) clearInterval(timer); }, 20); statObserver.unobserve(el); } }); }, { threshold: 0.5 });
     document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
   </script>
 </body>
