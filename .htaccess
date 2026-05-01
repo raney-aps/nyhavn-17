@@ -1,0 +1,34 @@
+RewriteEngine On
+
+# 1. Strip "index" from the URL → / or /en/
+RewriteCond %{THE_REQUEST} \s/+(.*?)index(\.html)?[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2. Strip .html extension from any incoming URL
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Internally map /foo to /foo.html when the file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule ^(.*)$ /$1.html [L]
+
+DirectoryIndex index.html
+
+# 4. Old DA-in-subfolder URLs → root (DA is now default)
+RewriteRule ^da/?$ / [R=301,L]
+RewriteRule ^da/(.*)\.html$ /$1 [R=301,L]
+RewriteRule ^da/(.*)$ /$1 [R=301,L]
+
+# 5. Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
