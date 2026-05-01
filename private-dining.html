@@ -28,6 +28,19 @@
     .tier-card{transition:transform .4s ease,border-color .4s ease,background .4s ease}
     .tier-card:hover{transform:translateY(-6px);border-color:rgba(247,205,111,.6);background:rgba(42,31,20,.6)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+    @media (hover: none) and (pointer: coarse) {
+      body { cursor: auto !important; }
+      #cursor-dot, #cursor-ring { display: none !important; }
+    }
+    #hamburger.open #hamb-icon { display: none; }
+    #hamburger #close-icon { display: none; }
+    #hamburger.open #close-icon { display: inline-block; }
+    .mobile-menu-group { width: 100%; max-width: 20rem; }
+    .mobile-menu-group > summary { list-style: none; outline: none; cursor: pointer; text-align: center; }
+    .mobile-menu-group > summary::-webkit-details-marker { display: none; }
+    .mobile-menu-group[open] > summary .chev { transform: rotate(180deg); }
+    .chev { transition: transform 0.3s ease; display: inline-block; vertical-align: middle; margin-left: 0.4rem; }
+
   </style>
   <noscript>
     <!-- noscript-fallback -->
@@ -46,13 +59,16 @@
   <div id="cursor-dot"></div><div id="cursor-ring"></div>
 
   <div id="mobile-menu">
-    <button id="mobile-close" aria-label="Luk menu" class="absolute top-4 right-4 p-3 text-cream cursor-pointer z-50"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="pointer-events-none"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     <a href="/" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Forside</a>
-    <a href="/menu" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Menu</a>
-    <a href="/menu-breakfast" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Morgenmad</a>
-    <a href="/menu-lunch" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Frokost</a>
-    <a href="/menu-dinner" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Aftensmad</a>
-    <a href="/menu-drinks" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer ml-4">Drikkevarer</a>
+    <details class="mobile-menu-group">
+      <summary class="font-serif text-4xl text-cream hover:text-gold transition-colors">Menu<svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="flex flex-col items-center gap-3 mt-4">
+        <a href="/menu-breakfast" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer">Morgenmad</a>
+        <a href="/menu-lunch" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer">Frokost</a>
+        <a href="/menu-dinner" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer">Aftensmad</a>
+        <a href="/menu-drinks" class="font-serif text-2xl text-cream/70 hover:text-gold transition-colors cursor-pointer">Drikkevarer</a>
+      </div>
+    </details>
     <a href="/about" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Vores Historie</a>
     <a href="/live-events" class="font-serif text-4xl text-cream hover:text-gold transition-colors cursor-pointer">Live Events</a>
     <a href="/private-dining" class="font-serif text-4xl text-gold cursor-pointer">Selskaber</a>
@@ -93,7 +109,7 @@
         </div>
         <a href="https://book.dinnerbooking.com/dk/da-DK/book/index/3626/2" target="_blank" rel="noopener" class="px-6 py-2.5 bg-gold text-navy font-sans font-medium tracking-widest text-xs uppercase cursor-pointer hover:bg-gold-light transition-colors">Book et Bord</a>
       </div>
-      <button id="hamburger" class="md:hidden text-cream cursor-pointer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <button id="hamburger" aria-label="Toggle menu" class="md:hidden text-cream cursor-pointer p-2"><svg id="hamb-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="pointer-events-none"><path d="M3 12h18M3 6h18M3 18h18"/></svg><svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="pointer-events-none"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
   </nav>
 
@@ -263,8 +279,7 @@
     document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
     (function l(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(l);})();
     window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
-    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
-    document.getElementById('mobile-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+    const hamb=document.getElementById('hamburger'),mob=document.getElementById('mobile-menu');if(hamb){hamb.addEventListener('click',()=>{hamb.classList.toggle('open');mob.classList.toggle('open');});}
     const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.1});
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   </script>
