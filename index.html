@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/tailwind.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    body { background-color: #1a120b; color: #f5f0e8; font-family: 'DM Sans', sans-serif; cursor: none; }
+    body { background-color: #1a120b; color: #f5f0e8; font-family: 'DM Sans', sans-serif;}
     h1, h2, h3 { font-family: 'EB Garamond', serif; }
     #cursor-dot { position: fixed; width: 8px; height: 8px; background: #F7CD6F; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, background 0.2s; }
     #cursor-ring { position: fixed; width: 32px; height: 32px; border: 1.5px solid rgba(247,205,111,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, border-color 0.3s; }
@@ -56,6 +56,12 @@
     .mobile-menu-group > summary::-webkit-details-marker { display: none; }
     .mobile-menu-group[open] > summary .chev { transform: rotate(180deg); }
     .chev { transition: transform 0.3s ease; display: inline-block; vertical-align: middle; margin-left: 0.4rem; }
+
+    /* Custom cursor: opt-in via JS only on hover-capable devices */
+    #cursor-dot, #cursor-ring { display: none; }
+    body[data-cursor="custom"] { cursor: none; }
+    body[data-cursor="custom"] #cursor-dot,
+    body[data-cursor="custom"] #cursor-ring { display: block; }
 
   </style>
   <noscript>
@@ -365,11 +371,19 @@
   </footer>
 
   <script>
-    const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.body.dataset.cursor = 'custom';
+      const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
     let ringX = 0, ringY = 0, mouseX = 0, mouseY = 0;
     document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px'; });
     document.querySelectorAll('a, button').forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover')); el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover')); });
     (function animateRing() { ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12; ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px'; requestAnimationFrame(animateRing); })();
+    } else {
+      const _d = document.getElementById('cursor-dot');
+      const _r = document.getElementById('cursor-ring');
+      if (_d) _d.remove();
+      if (_r) _r.remove();
+    }
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
     const heroVideo = document.getElementById('hero-video');
