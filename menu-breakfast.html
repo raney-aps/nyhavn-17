@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Morgenmad Menu — Nyhavn 17</title>
-  <meta name="description" content="Morgenmad hos Nyhavn 17. Brød &amp; kager, æggeretter, avocadotoast, pandekager og vores berømte brunchtallerken. Serveres dagligt 09:30–13:00." />
+  <title>Morgenmad Menu &mdash; Nyhavn 17</title>
+  <meta name="description" content="Morgenmad hos Nyhavn 17: bagværk, æggeretter, toast og morgenmadstallerken. Serveres dagligt 09:30&ndash;11:30." />
   <link rel="alternate" hreflang="en" href="/en/menu-breakfast" />
   <link rel="alternate" hreflang="da" href="/menu-breakfast" />
   <link rel="alternate" hreflang="x-default" href="/menu-breakfast" />
@@ -30,6 +30,10 @@
     .menu-item:hover{border-top-color:rgba(247,205,111,.4)}
     .menu-item:hover .item-name{color:#F7CD6F}
     .item-name{transition:color .3s}
+    .menu-sec{margin-bottom:4.5rem}.menu-sec:last-of-type{margin-bottom:0}
+    .menu-cols{column-gap:4rem}
+    @media(min-width:1024px){.menu-cols{column-count:2}}
+    .menu-cols > .menu-item{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
     .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
     @media (hover: none) and (pointer: coarse) {
@@ -128,7 +132,7 @@
     <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
     <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Morgenmad i Nyhavn</h1>
     <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Serveres dagligt fra <strong class="text-cream">09:30</strong> til <strong class="text-cream">13:00</strong></p>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Serveres dagligt <strong class="text-cream">09:30</strong> til <strong class="text-cream">11:30</strong></p>
   </header>
 
   <!-- Sub-nav -->
@@ -143,68 +147,52 @@
 
   <!-- Menu content -->
   <main class="max-w-6xl mx-auto px-6 py-20">
-    <!-- Featured: Brunchtallerken -->
-    <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-        <div class="flex-1">
-          <p class="section-label mb-3">Signatur</p>
-          <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Brunchtallerken</h2>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Røræg, bacon, brunchpølse, bagt tomat, stegte portobello, skinke, morgenmadsost, græsk yoghurt med granola, amerikanske pandekager, brød, smør &amp; croissant.</p>
-        </div>
-        <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">289</span>
-      </div>
-    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-      <div>
-        <p class="section-label mb-8">Kaffe</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Espresso</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Americano</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">52</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cortado</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Flat White</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Café Latte</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cappuccino</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Varm Chokolade</p><p class="font-sans text-cream/45 text-sm mt-1">Med flødeskum</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Te</p><p class="font-sans text-cream/45 text-sm mt-1">Se udvalg i baren</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friskpresset Appelsinjuice</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-        </div>
-
-        <p class="section-label mt-14 mb-8">Bagværk</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Plain Croissant</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">30</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pain au Chocolat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kardemommebolle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerbrød</p><p class="font-sans text-cream/45 text-sm mt-1">Med syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Ristet Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Skinke &amp; ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fyldt Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Hønsesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fyldt Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Grillet croissant</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med kogt skinke, smeltet ost og sennep</p><span class="font-serif text-2xl text-gold">55</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med ost, bacon og pommes frites</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Morgenmadstallerken</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Skinke, ost, røget laks, brød, syltetøj og smør &nbsp;·&nbsp; tilføj røræg +35</p><span class="font-serif text-2xl text-gold">89</span></div>
       </div>
 
-      <div>
-        <p class="section-label mb-8">Populær morgenmad</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røræg</p><p class="font-sans text-cream/45 text-sm mt-1">Røræg på toast, purløg &amp; HP-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Svampeomelet</p><p class="font-sans text-cream/45 text-sm mt-1">Stegte svampe, spinat &amp; ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">98</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Avocadotoast</p><p class="font-sans text-cream/45 text-sm mt-1">Knust avocado, chili, feta, koriander &amp; syltede løg &nbsp;·&nbsp; tilføj spejlæg +29</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Eggs Benedict</p><p class="font-sans text-cream/45 text-sm mt-1">Brioche, spinat, skinke, pocheret æg &amp; krydret hollandaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenburrito</p><p class="font-sans text-cream/45 text-sm mt-1">Røræg, bacon, svampe, ost &amp; spinat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">98</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Simpel Bagel</p><p class="font-sans text-cream/45 text-sm mt-1">Smør &amp; jordbærsyltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenbagel</p><p class="font-sans text-cream/45 text-sm mt-1">Philadelphia med urter, avocado &amp; røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef-bagel</p><p class="font-sans text-cream/45 text-sm mt-1">Spejlæg, BBQ-sauce, roastbeef &amp; karamelliserede løg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Bagværk</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Med smør og syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pain au chocolat</p><p class="font-sans text-cream/45 text-sm mt-1">Med nougatfyld</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">60</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerbrød</p><p class="font-sans text-cream/45 text-sm mt-1">Med cremefyld og syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">40</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Brød og smør</p><p class="font-sans text-cream/45 text-sm mt-1">Lune brødboller og saltet smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
         </div>
+      </section>
 
-        <p class="section-label mt-14 mb-8">It's Okay</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Amerikanske Pandekager — Simple</p><p class="font-sans text-cream/45 text-sm mt-1">3 pandekager, smør &amp; ahornsirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Amerikanske Pandekager Deluxe</p><p class="font-sans text-cream/45 text-sm mt-1">Pisket vaniljecreme, bær, ahornsirup &amp; vaniljeis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Granolaskål</p><p class="font-sans text-cream/45 text-sm mt-1">Græsk yoghurt, ahornsirup, bær, granola &amp; chokolade</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gulerodskage</p><p class="font-sans text-cream/45 text-sm mt-1">Hjemmelavet gulerodskage, flødeost, fløde &amp; kanel</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chokoladelavakage</p><p class="font-sans text-cream/45 text-sm mt-1">Bagt chokoladekage, vaniljeis, karamel, bær &amp; flødeskum</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Æggeretter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røræg</p><p class="font-sans text-cream/45 text-sm mt-1">Med purløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">40</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Omelet</p><p class="font-sans text-cream/45 text-sm mt-1">Stegt i smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">60</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spejlæg</p><p class="font-sans text-cream/45 text-sm mt-1">Stegt i smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blødkogt æg</p><p class="font-sans text-cream/45 text-sm mt-1">Serveret med havsalt</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">25</span></div></div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Toast</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Avocadotoast</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet rugbrød, avocado i skiver, purløg, havsalt og olivenolie</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Toast med skinke og ost</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, skinke og smeltet ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Toast med røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, cremet æggesalat, dild, spinat og røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg og bacon</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, røræg og bacon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">85</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Tilbehør</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Brød</p><p class="font-sans text-cream/45 text-sm mt-1">Brød og smør 35 &nbsp;·&nbsp; rugbrød og smør 35</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pålæg og andet</p><p class="font-sans text-cream/45 text-sm mt-1">Røget laks 35 &nbsp;·&nbsp; bacon 35 &nbsp;·&nbsp; ost 25 &nbsp;·&nbsp; pølser 40 &nbsp;·&nbsp; avocado 40</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenmadsskål</p><p class="font-sans text-cream/45 text-sm mt-1">Frisk frugt, yoghurt, granola og honning</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pandekager</p><p class="font-sans text-cream/45 text-sm mt-1">Luftige pandekager med smør og ahornsirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
+        </div>
+      </section>
 
     <!-- CTA -->
     <div class="mt-24 pt-16 border-t border-navy-light text-center">
