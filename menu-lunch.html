@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frokost &amp; Middag Menu — Nyhavn 17</title>
-  <meta name="description" content="Det fulde køkkenmenu hos Nyhavn 17. Smørrebrød, burgere, pasta, fish &amp; chips, steak frites og mere. Køkkenet er åbent 09:30–21:30." />
+  <title>Frokost Menu &mdash; Nyhavn 17</title>
+  <meta name="description" content="Frokost hos Nyhavn 17: sild, smørrebrød, stjerneskud, danske klassikere og det varme køkken. Serveres dagligt 11:30&ndash;17:00." />
   <link rel="alternate" hreflang="en" href="/en/menu-lunch" />
   <link rel="alternate" hreflang="da" href="/menu-lunch" />
   <link rel="alternate" hreflang="x-default" href="/menu-lunch" />
@@ -25,6 +25,10 @@
     .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
     #mobile-menu{display:none;position:fixed;inset:0;background:rgba(18,12,6,.98);z-index:40;flex-direction:column;justify-content:flex-start;align-items:center;gap:1.25rem;padding:5rem 1rem 3rem;overflow-y:auto}#mobile-menu.open{display:flex}
     .menu-item{border-top:1px solid rgba(42,58,79,.8);transition:border-color .3s}.menu-item:hover{border-top-color:rgba(247,205,111,.4)}.menu-item:hover .item-name{color:#F7CD6F}.item-name{transition:color .3s}
+    .menu-sec{margin-bottom:4.5rem}.menu-sec:last-of-type{margin-bottom:0}
+    .menu-cols{column-gap:4rem}
+    @media(min-width:1024px){.menu-cols{column-count:2}}
+    .menu-cols > .menu-item{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
     .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
     @media (hover: none) and (pointer: coarse) {
@@ -122,7 +126,7 @@
     <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
     <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Frokost i Nyhavn</h1>
     <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Køkkenet er åbent <strong class="text-cream">11:30</strong> til <strong class="text-cream">22:00</strong></p>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Serveres dagligt <strong class="text-cream">11:30</strong> til <strong class="text-cream">17:00</strong></p>
   </header>
 
   <div class="bg-navy-mid border-b border-navy-light">
@@ -135,43 +139,88 @@
   </div>
 
   <main class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-      <div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Club sandwich</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med kylling, bacon, karrydressing, salat og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med ost, bacon og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Nachos</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Cheddar, salsa, guacamole og creme fraiche</p><span class="font-serif text-2xl text-gold">139</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Fish &amp; chips</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med frisk kuller, sauce tartare eller remoulade, sprøde pommes frites og citron</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Dagens suppe</p><span class="font-serif text-2xl text-gold">89</span></div>
+      </div>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Sild</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marineret sild</p><p class="font-sans text-cream/45 text-sm mt-1">Med løg og kapers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Karrysild</p><p class="font-sans text-cream/45 text-sm mt-1">Med hårdkogt æg, løg og kapers, friskt æble</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Christiansø Pigesild</p><p class="font-sans text-cream/45 text-sm mt-1">Med rå æggeblomme, løg og kapers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">3 slags sild</p><p class="font-sans text-cream/45 text-sm mt-1">Med marineret sild, karrysild og Christiansø Pigesild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
         <p class="section-label mb-8">Smørrebrød</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">2 slags sild</p><p class="font-sans text-cream/45 text-sm mt-1">Marineret sild, karrysild, æbler, løg, fedt, rugbrød &amp; sæsonens urter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg &amp; Rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, mayonnaise, blødkogte æg &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rejer på Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, dildmayonnaise, dild &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Pankesteg rødspættefilet, remoulade, citron, tomat &amp; dild &nbsp;·&nbsp; tilføj rejer +59</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Pulled kylling i hjemmelavet dressing, svampe, asparges, bacon &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Skiver af roastbeef, remoulade, ristede løg, syltet agurk, peberrod, kapers &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg og rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, dild og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pillede rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 1.</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 2.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 3.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, lakserogn, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Med peberrod og røgeostecreme</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks og æg</p><p class="font-sans text-cream/45 text-sm mt-1">Med cremet æggesalat, tomat, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Snapsemad</p><p class="font-sans text-cream/45 text-sm mt-1">Med marineret sild, kogte kartofler, dildcreme og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprødstegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Med bacon, champignon, asparges og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Med asier, agurkesalat, peberrod, karse, kapers og ristede løg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kartoffel <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med røgeostecreme, syltede løg, ristede løg, karse og forårsløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tomat <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med hårdkogt æg, marinerede tomater, mayonnaise og purløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blåskimmelost</p><p class="font-sans text-cream/45 text-sm mt-1">Med rå æggeblomme, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gammel ost</p><p class="font-sans text-cream/45 text-sm mt-1">Med sky, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friteret camembert</p><p class="font-sans text-cream/45 text-sm mt-1">Med blåbærsyltetøj og ristet brioche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
         </div>
+      </section>
 
-        <p class="section-label mt-14 mb-8">Deleretter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegt svinekød i blød briochebolle, cremet coleslaw &amp; BBQ-sauce &nbsp;·&nbsp; 2 stk.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Kyllingevinger i BBQ-sauce med ranch &amp; koriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Trøffelfritter</p><p class="font-sans text-cream/45 text-sm mt-1">Gyldne fritter, parmesan &amp; sriracha-mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprøde Blæksprutter</p><p class="font-sans text-cream/45 text-sm mt-1">Små calamari, aioli &amp; citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+      <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div class="flex-1">
+            <p class="section-label mb-3">Husets specialitet</p>
+            <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Stjerneskud</h2>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Stegte og dampede rødspættefileter med rejer, asparges og dressing</p>
+          </div>
+          <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">179</span>
         </div>
       </div>
 
-      <div>
-        <p class="section-label mb-8">Anbefalede retter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Fish &amp; Chips<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Kuller i ølbeignet, friskpresset citron, gyldne fritter &amp; hjemmelavet tartarsauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">279</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">17 Husets Burger</p><p class="font-sans text-cream/45 text-sm mt-1">230g okseburger med cheddar, bacon, salat, tomat, pickles, husets burgersauce &amp; gyldne fritter &nbsp;·&nbsp; fås vegetarisk</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">249</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Klassisk Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, karrymayonnaise, tomat, salat, bacon, gyldne fritter &amp; mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos med Kylling</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kylling, tortillachips med smeltet cheddar, jalapeños, salsa, guacamole, koriander &amp; sour cream</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Stjerneskud<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Stegt rødspættefilet, bagt laks, rejer, kaviar, tomat, citron, asparges &amp; Thousand Island-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Laks Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Bagt laks, stegte sorte oliven, kartofler &amp; asparges, frisk hollandaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">299</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kalveschnitzel 400g</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk paneret kalveschnitzel med kapers, ansjos, peberrod, kartoffelbåde &amp; bearnaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pebersteak</p><p class="font-sans text-cream/45 text-sm mt-1">350g New York Strip, gyldne fritter, grøn salat i vinaigrette &amp; madagascar-pebersauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegte danske spareribs, BBQ-sauce, pommes frites, majs &amp; coleslaw</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cæsarsalat</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, urtekrutoner, baby gem-salat, hjemmelavet cæsardressing, sorte oliven &amp; soltørrede tomater</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Det varme køkken</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, sprøde pommes frites, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">168</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bagt vildlaks</p><p class="font-sans text-cream/45 text-sm mt-1">Med artiskokker, kartofler, grønne oliven, hollandaisesauce og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Herregårdsbøf</p><p class="font-sans text-cream/45 text-sm mt-1">Med 230 g hakkebøf, bearnaisesauce, grønne ærter og kartoffelbåde</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødpaneret kalvekød, serveret med stegte kartofler, ærter, citron, kapers og ansjoser</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak frites af oksemørbrad</p><p class="font-sans text-cream/45 text-sm mt-1">Med valgfri sauce: bearnaise eller grøn peber, sprøde pommes frites og grøn salat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Danske klassikere</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Biksemad</p><p class="font-sans text-cream/45 text-sm mt-1">En klassisk dansk ret med kartofler i tern, løg og møre stykker kød, stegt gyldent og sprødt. Serveres med spejlæg, rødbeder og klassisk dansk tilbehør.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Klassiske pandestegte frikadeller af svine- og kalvekød, serveret med kartofler, brun sovs og syltede agurker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødstegt flæsk serveret med kogte kartofler og cremet persillesovs. En ægte dansk klassiker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Desserter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Affogato</p><p class="font-sans text-cream/45 text-sm mt-1">Vaniljeis med varm espresso</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pandekager</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og chokoladesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chokoladelavakage</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og bærcoulis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æbletrifli</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljecreme, syltetøj, danske makroner og cognac</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+        </div>
+      </section>
 
     <div class="mt-24 pt-16 border-t border-navy-light text-center">
       <p class="font-sans text-cream/50 text-sm mb-2">Alle priser er i DKK.</p>

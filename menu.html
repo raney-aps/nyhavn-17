@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu — Nyhavn 17</title>
-  <meta name="description" content="Morgenmad, frokost, middag og drikkevarer hos Nyhavn 17. Traditionelt dansk gastropub i København. Køkkenet er åbent 09:30–21:30." />
+  <meta name="description" content="Morgenmad, frokost, middag og drikkevarer hos Nyhavn 17. Traditionelt dansk gastropub i København. Køkkenet er åbent 09:30–22:00." />
   <link rel="alternate" hreflang="en" href="/en/menu" />
   <link rel="alternate" hreflang="da" href="/menu" />
   <link rel="alternate" hreflang="x-default" href="/menu" />
@@ -32,6 +32,10 @@
     .menu-item:hover{border-top-color:rgba(247,205,111,.4)}
     .menu-item:hover .item-name{color:#F7CD6F}
     .item-name{transition:color .3s}
+    .menu-sec{margin-bottom:4.5rem}.menu-sec:last-of-type{margin-bottom:0}
+    .menu-cols{column-gap:4rem}
+    @media(min-width:1024px){.menu-cols{column-count:2}}
+    .menu-cols > .menu-item{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
     .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
     .tab-pane.hidden{display:none}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
@@ -135,7 +139,7 @@
       <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Siden 1936 · Familiedrevet</p>
       <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-6">Vores Menu</h1>
       <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-      <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-lg mx-auto text-sm leading-relaxed">Køkkenet åbent 11:30 — 22:00. Bar åben til midnat — weekend til 01:30.</p>
+      <p class="reveal reveal-delay-2 font-sans text-cream/55 max-w-lg mx-auto text-sm leading-relaxed">Køkkenet er åbent 09:30 til 22:00. Bar åben til midnat, weekend til 01:30.</p>
     </div>
   </header>
 
@@ -154,261 +158,340 @@
 
     <!-- MORGENMAD TAB -->
     <div id="tab-morgenmad" class="tab-pane">
-      <!-- Featured: Brunchtallerken -->
-    <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-        <div class="flex-1">
-          <p class="section-label mb-3">Signatur</p>
-          <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Brunchtallerken</h2>
-          <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Røræg, bacon, brunchpølse, bagt tomat, stegte portobello, skinke, morgenmadsost, græsk yoghurt med granola, amerikanske pandekager, brød, smør &amp; croissant.</p>
-        </div>
-        <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">289</span>
+      <p class="font-sans text-cream/40 text-xs mb-8">09:30 &ndash; 11:30</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Grillet croissant</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med kogt skinke, smeltet ost og sennep</p><span class="font-serif text-2xl text-gold">55</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med ost, bacon og pommes frites</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Morgenmadstallerken</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Skinke, ost, røget laks, brød, syltetøj og smør &nbsp;·&nbsp; tilføj røræg +35</p><span class="font-serif text-2xl text-gold">89</span></div>
       </div>
-    </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-        <div>
-          <p class="section-label mb-8">Kaffe</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Espresso</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Americano</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">52</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cortado</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Flat White</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Café Latte</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cappuccino</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">62</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Varm Chokolade</p><p class="font-sans text-cream/45 text-sm mt-1">Med flødeskum</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Te</p><p class="font-sans text-cream/45 text-sm mt-1">Se udvalg i baren</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friskpresset Appelsinjuice</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Bagværk</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Med smør og syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pain au chocolat</p><p class="font-sans text-cream/45 text-sm mt-1">Med nougatfyld</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">60</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerbrød</p><p class="font-sans text-cream/45 text-sm mt-1">Med cremefyld og syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">40</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Brød og smør</p><p class="font-sans text-cream/45 text-sm mt-1">Lune brødboller og saltet smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Bagværk</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Plain Croissant</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">30</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pain au Chocolat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kardemommebolle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerbrød</p><p class="font-sans text-cream/45 text-sm mt-1">Med syltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">55</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Ristet Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Skinke &amp; ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fyldt Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Hønsesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fyldt Croissant</p><p class="font-sans text-cream/45 text-sm mt-1">Røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Æggeretter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røræg</p><p class="font-sans text-cream/45 text-sm mt-1">Med purløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">40</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Omelet</p><p class="font-sans text-cream/45 text-sm mt-1">Stegt i smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">60</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spejlæg</p><p class="font-sans text-cream/45 text-sm mt-1">Stegt i smør</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blødkogt æg</p><p class="font-sans text-cream/45 text-sm mt-1">Serveret med havsalt</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">25</span></div></div>
         </div>
-        </div>
+      </section>
 
-        <div>
-          <p class="section-label mb-8">Populær morgenmad</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røræg</p><p class="font-sans text-cream/45 text-sm mt-1">Røræg på toast, purløg &amp; HP-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Svampeomelet</p><p class="font-sans text-cream/45 text-sm mt-1">Stegte svampe, spinat &amp; ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">98</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Avocadotoast</p><p class="font-sans text-cream/45 text-sm mt-1">Knust avocado, chili, feta, koriander &amp; syltede løg &nbsp;·&nbsp; tilføj spejlæg +29</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Eggs Benedict</p><p class="font-sans text-cream/45 text-sm mt-1">Brioche, spinat, skinke, pocheret æg &amp; krydret hollandaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenburrito</p><p class="font-sans text-cream/45 text-sm mt-1">Røræg, bacon, svampe, ost &amp; spinat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">98</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Simpel Bagel</p><p class="font-sans text-cream/45 text-sm mt-1">Smør &amp; jordbærsyltetøj</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenbagel</p><p class="font-sans text-cream/45 text-sm mt-1">Philadelphia med urter, avocado &amp; røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef-bagel</p><p class="font-sans text-cream/45 text-sm mt-1">Spejlæg, BBQ-sauce, roastbeef &amp; karamelliserede løg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Toast</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Avocadotoast</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet rugbrød, avocado i skiver, purløg, havsalt og olivenolie</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Toast med skinke og ost</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, skinke og smeltet ost</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Toast med røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, cremet æggesalat, dild, spinat og røget laks</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg og bacon</p><p class="font-sans text-cream/45 text-sm mt-1">Ristet toastbrød, røræg og bacon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">85</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">It's Okay</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Amerikanske Pandekager — Simple</p><p class="font-sans text-cream/45 text-sm mt-1">3 pandekager, smør &amp; ahornsirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Amerikanske Pandekager Deluxe</p><p class="font-sans text-cream/45 text-sm mt-1">Pisket vaniljecreme, bær, ahornsirup &amp; vaniljeis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">149</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Granolaskål</p><p class="font-sans text-cream/45 text-sm mt-1">Græsk yoghurt, ahornsirup, bær, granola &amp; chokolade</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gulerodskage</p><p class="font-sans text-cream/45 text-sm mt-1">Hjemmelavet gulerodskage, flødeost, fløde &amp; kanel</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chokoladelavakage</p><p class="font-sans text-cream/45 text-sm mt-1">Bagt chokoladekage, vaniljeis, karamel, bær &amp; flødeskum</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">129</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Tilbehør</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Brød</p><p class="font-sans text-cream/45 text-sm mt-1">Brød og smør 35 &nbsp;·&nbsp; rugbrød og smør 35</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pålæg og andet</p><p class="font-sans text-cream/45 text-sm mt-1">Røget laks 35 &nbsp;·&nbsp; bacon 35 &nbsp;·&nbsp; ost 25 &nbsp;·&nbsp; pølser 40 &nbsp;·&nbsp; avocado 40</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Morgenmadsskål</p><p class="font-sans text-cream/45 text-sm mt-1">Frisk frugt, yoghurt, granola og honning</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pandekager</p><p class="font-sans text-cream/45 text-sm mt-1">Luftige pandekager med smør og ahornsirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
         </div>
-        </div>
-      </div>
-    
+      </section>
     </div>
 
     <!-- FROKOST TAB -->
     <div id="tab-frokost" class="tab-pane hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-        <div>
-          <p class="section-label mb-8">Smørrebrød</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">2 slags sild</p><p class="font-sans text-cream/45 text-sm mt-1">Marineret sild, karrysild, æbler, løg, fedt, rugbrød &amp; sæsonens urter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg &amp; Rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, mayonnaise, blødkogte æg &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rejer på Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, dildmayonnaise, dild &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Pankesteg rødspættefilet, remoulade, citron, tomat &amp; dild &nbsp;·&nbsp; tilføj rejer +59</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Pulled kylling i hjemmelavet dressing, svampe, asparges, bacon &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Skiver af roastbeef, remoulade, ristede løg, syltet agurk, peberrod, kapers &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-        </div>
+      <p class="font-sans text-cream/40 text-xs mb-8">11:30 &ndash; 17:00</p>
 
-          <p class="section-label mt-14 mb-8">Deleretter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegt svinekød i blød briochebolle, cremet coleslaw &amp; BBQ-sauce &nbsp;·&nbsp; 2 stk.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Kyllingevinger i BBQ-sauce med ranch &amp; koriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Trøffelfritter</p><p class="font-sans text-cream/45 text-sm mt-1">Gyldne fritter, parmesan &amp; sriracha-mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprøde Blæksprutter</p><p class="font-sans text-cream/45 text-sm mt-1">Små calamari, aioli &amp; citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-        </div>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Club sandwich</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med kylling, bacon, karrydressing, salat og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med ost, bacon og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Nachos</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Cheddar, salsa, guacamole og creme fraiche</p><span class="font-serif text-2xl text-gold">139</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Fish &amp; chips</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med frisk kuller, sauce tartare eller remoulade, sprøde pommes frites og citron</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Dagens suppe</p><span class="font-serif text-2xl text-gold">89</span></div>
+      </div>
 
-        <div>
-          <p class="section-label mb-8">Anbefalede retter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Fish &amp; Chips<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Kuller i ølbeignet, friskpresset citron, gyldne fritter &amp; hjemmelavet tartarsauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">279</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">17 Husets Burger</p><p class="font-sans text-cream/45 text-sm mt-1">230g okseburger med cheddar, bacon, salat, tomat, pickles, husets burgersauce &amp; gyldne fritter &nbsp;·&nbsp; fås vegetarisk</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">249</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Klassisk Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, karrymayonnaise, tomat, salat, bacon, gyldne fritter &amp; mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos med Kylling</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kylling, tortillachips med smeltet cheddar, jalapeños, salsa, guacamole, koriander &amp; sour cream</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Stjerneskud<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Stegt rødspættefilet, bagt laks, rejer, kaviar, tomat, citron, asparges &amp; Thousand Island-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Laks Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Bagt laks, stegte sorte oliven, kartofler &amp; asparges, frisk hollandaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">299</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kalveschnitzel 400g</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk paneret kalveschnitzel med kapers, ansjos, peberrod, kartoffelbåde &amp; bearnaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pebersteak</p><p class="font-sans text-cream/45 text-sm mt-1">350g New York Strip, gyldne fritter, grøn salat i vinaigrette &amp; madagascar-pebersauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegte danske spareribs, BBQ-sauce, pommes frites, majs &amp; coleslaw</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cæsarsalat</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, urtekrutoner, baby gem-salat, hjemmelavet cæsardressing, sorte oliven &amp; soltørrede tomater</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Sild</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marineret sild</p><p class="font-sans text-cream/45 text-sm mt-1">Med løg og kapers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Karrysild</p><p class="font-sans text-cream/45 text-sm mt-1">Med hårdkogt æg, løg og kapers, friskt æble</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Christiansø Pigesild</p><p class="font-sans text-cream/45 text-sm mt-1">Med rå æggeblomme, løg og kapers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">3 slags sild</p><p class="font-sans text-cream/45 text-sm mt-1">Med marineret sild, karrysild og Christiansø Pigesild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
         </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Smørrebrød</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg og rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, dild og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pillede rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 1.</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 2.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 3.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, lakserogn, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Med peberrod og røgeostecreme</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks og æg</p><p class="font-sans text-cream/45 text-sm mt-1">Med cremet æggesalat, tomat, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Snapsemad</p><p class="font-sans text-cream/45 text-sm mt-1">Med marineret sild, kogte kartofler, dildcreme og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprødstegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Med bacon, champignon, asparges og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Med asier, agurkesalat, peberrod, karse, kapers og ristede løg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kartoffel <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med røgeostecreme, syltede løg, ristede løg, karse og forårsløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tomat <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med hårdkogt æg, marinerede tomater, mayonnaise og purløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blåskimmelost</p><p class="font-sans text-cream/45 text-sm mt-1">Med rå æggeblomme, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gammel ost</p><p class="font-sans text-cream/45 text-sm mt-1">Med sky, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friteret camembert</p><p class="font-sans text-cream/45 text-sm mt-1">Med blåbærsyltetøj og ristet brioche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+        </div>
+      </section>
+
+      <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div class="flex-1">
+            <p class="section-label mb-3">Husets specialitet</p>
+            <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Stjerneskud</h2>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Stegte og dampede rødspættefileter med rejer, asparges og dressing</p>
+          </div>
+          <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">179</span>
         </div>
       </div>
-    
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Det varme køkken</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, sprøde pommes frites, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">168</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bagt vildlaks</p><p class="font-sans text-cream/45 text-sm mt-1">Med artiskokker, kartofler, grønne oliven, hollandaisesauce og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Herregårdsbøf</p><p class="font-sans text-cream/45 text-sm mt-1">Med 230 g hakkebøf, bearnaisesauce, grønne ærter og kartoffelbåde</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødpaneret kalvekød, serveret med stegte kartofler, ærter, citron, kapers og ansjoser</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak frites af oksemørbrad</p><p class="font-sans text-cream/45 text-sm mt-1">Med valgfri sauce: bearnaise eller grøn peber, sprøde pommes frites og grøn salat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Danske klassikere</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Biksemad</p><p class="font-sans text-cream/45 text-sm mt-1">En klassisk dansk ret med kartofler i tern, løg og møre stykker kød, stegt gyldent og sprødt. Serveres med spejlæg, rødbeder og klassisk dansk tilbehør.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Klassiske pandestegte frikadeller af svine- og kalvekød, serveret med kartofler, brun sovs og syltede agurker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødstegt flæsk serveret med kogte kartofler og cremet persillesovs. En ægte dansk klassiker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Desserter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Affogato</p><p class="font-sans text-cream/45 text-sm mt-1">Vaniljeis med varm espresso</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pandekager</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og chokoladesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chokoladelavakage</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og bærcoulis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æbletrifli</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljecreme, syltetøj, danske makroner og cognac</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+        </div>
+      </section>
     </div>
 
-    <!-- AFTENSMAD TAB (same items as Frokost) -->
+    <!-- AFTENSMAD TAB -->
     <div id="tab-aftensmad" class="tab-pane hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-        <div>
-          <p class="section-label mb-8">Smørrebrød</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">2 slags sild</p><p class="font-sans text-cream/45 text-sm mt-1">Marineret sild, karrysild, æbler, løg, fedt, rugbrød &amp; sæsonens urter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg &amp; Rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, mayonnaise, blødkogte æg &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rejer på Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Pillede rejer, dildmayonnaise, dild &amp; ristet briochebrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Pankesteg rødspættefilet, remoulade, citron, tomat &amp; dild &nbsp;·&nbsp; tilføj rejer +59</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Pulled kylling i hjemmelavet dressing, svampe, asparges, bacon &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Skiver af roastbeef, remoulade, ristede løg, syltet agurk, peberrod, kapers &amp; karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-        </div>
+      <p class="font-sans text-cream/40 text-xs mb-8">17:00 &ndash; 22:00</p>
 
-          <p class="section-label mt-14 mb-8">Deleretter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegt svinekød i blød briochebolle, cremet coleslaw &amp; BBQ-sauce &nbsp;·&nbsp; 2 stk.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Kyllingevinger i BBQ-sauce med ranch &amp; koriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Trøffelfritter</p><p class="font-sans text-cream/45 text-sm mt-1">Gyldne fritter, parmesan &amp; sriracha-mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprøde Blæksprutter</p><p class="font-sans text-cream/45 text-sm mt-1">Små calamari, aioli &amp; citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-        </div>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Club sandwich</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med kylling, bacon, karrydressing, salat og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med ost, bacon og pommes frites</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Nachos</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Cheddar, salsa, guacamole og creme fraiche</p><span class="font-serif text-2xl text-gold">139</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Fish &amp; chips</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Med frisk kuller, sauce tartare eller remoulade, sprøde pommes frites og citron</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Dagens suppe</p><span class="font-serif text-2xl text-gold">89</span></div>
+      </div>
 
-        <div>
-          <p class="section-label mb-8">Anbefalede retter</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Fish &amp; Chips<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Kuller i ølbeignet, friskpresset citron, gyldne fritter &amp; hjemmelavet tartarsauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">279</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">17 Husets Burger</p><p class="font-sans text-cream/45 text-sm mt-1">230g okseburger med cheddar, bacon, salat, tomat, pickles, husets burgersauce &amp; gyldne fritter &nbsp;·&nbsp; fås vegetarisk</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">249</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Klassisk Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, karrymayonnaise, tomat, salat, bacon, gyldne fritter &amp; mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos med Kylling</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kylling, tortillachips med smeltet cheddar, jalapeños, salsa, guacamole, koriander &amp; sour cream</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signatur Stjerneskud<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATUR</span></p><p class="font-sans text-cream/45 text-sm mt-1">Stegt rødspættefilet, bagt laks, rejer, kaviar, tomat, citron, asparges &amp; Thousand Island-sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Laks Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Bagt laks, stegte sorte oliven, kartofler &amp; asparges, frisk hollandaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">299</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kalveschnitzel 400g</p><p class="font-sans text-cream/45 text-sm mt-1">Klassisk paneret kalveschnitzel med kapers, ansjos, peberrod, kartoffelbåde &amp; bearnaisesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pebersteak</p><p class="font-sans text-cream/45 text-sm mt-1">350g New York Strip, gyldne fritter, grøn salat i vinaigrette &amp; madagascar-pebersauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Langtidsstegte danske spareribs, BBQ-sauce, pommes frites, majs &amp; coleslaw</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cæsarsalat</p><p class="font-sans text-cream/45 text-sm mt-1">Grillet kyllingebryst, urtekrutoner, baby gem-salat, hjemmelavet cæsardressing, sorte oliven &amp; soltørrede tomater</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Forretter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marineret sild</p><p class="font-sans text-cream/45 text-sm mt-1">Med løg og kapers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Klassisk dansk rejecocktail</p><p class="font-sans text-cream/45 text-sm mt-1">Håndpillede rejer, sprød salat, agurk, citron og hjemmelavet cocktaildressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Med røgeostecreme, dild, citron og rugbrød</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Svampetoast</p><p class="font-sans text-cream/45 text-sm mt-1">Med ristet surdejsbrød, sæsonens svampe og flødesauce med timian og hvidløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
         </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Smørrebrød</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æg og rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, dild og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pillede rejer</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, sort peber, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 1.</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 2.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet 3.</p><p class="font-sans text-cream/45 text-sm mt-1">Med mayonnaise, rejer, lakserogn, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks</p><p class="font-sans text-cream/45 text-sm mt-1">Med peberrod og røgeostecreme</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Røget laks og æg</p><p class="font-sans text-cream/45 text-sm mt-1">Med cremet æggesalat, tomat, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Snapsemad</p><p class="font-sans text-cream/45 text-sm mt-1">Med marineret sild, kogte kartofler, dildcreme og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sprødstegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Med rødkål og agurkesalat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hønsesalat</p><p class="font-sans text-cream/45 text-sm mt-1">Med bacon, champignon, asparges og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Med asier, agurkesalat, peberrod, karse, kapers og ristede løg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kartoffel <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med røgeostecreme, syltede løg, ristede løg, karse og forårsløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tomat <span class="text-gold/70">(vegetarisk)</span></p><p class="font-sans text-cream/45 text-sm mt-1">Med hårdkogt æg, marinerede tomater, mayonnaise og purløg</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blåskimmelost</p><p class="font-sans text-cream/45 text-sm mt-1">Med rå æggeblomme, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gammel ost</p><p class="font-sans text-cream/45 text-sm mt-1">Med sky, løg og karse</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friteret camembert</p><p class="font-sans text-cream/45 text-sm mt-1">Med blåbærsyltetøj og ristet brioche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+        </div>
+      </section>
+
+      <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div class="flex-1">
+            <p class="section-label mb-3">Husets specialitet</p>
+            <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Stjerneskud</h2>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Stegte og dampede rødspættefileter med rejer, asparges og dressing</p>
+          </div>
+          <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">179</span>
         </div>
       </div>
-    
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Det varme køkken</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Rødspættefilet</p><p class="font-sans text-cream/45 text-sm mt-1">Med remoulade, sprøde pommes frites, citron og dild</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">168</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bagt vildlaks</p><p class="font-sans text-cream/45 text-sm mt-1">Med artiskokker, kartofler, grønne oliven, hollandaisesauce og citron</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Herregårdsbøf</p><p class="font-sans text-cream/45 text-sm mt-1">Med 230 g hakkebøf, bearnaisesauce, grønne ærter og kartoffelbåde</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wienerschnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødpaneret kalvekød, serveret med stegte kartofler, ærter, citron, kapers og ansjoser</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak frites af oksemørbrad</p><p class="font-sans text-cream/45 text-sm mt-1">Med valgfri sauce: bearnaise eller grøn peber, sprøde pommes frites og grøn salat</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Danske klassikere</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Biksemad</p><p class="font-sans text-cream/45 text-sm mt-1">En klassisk dansk ret med kartofler i tern, løg og møre stykker kød, stegt gyldent og sprødt. Serveres med spejlæg, rødbeder og klassisk dansk tilbehør.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Frikadeller</p><p class="font-sans text-cream/45 text-sm mt-1">Klassiske pandestegte frikadeller af svine- og kalvekød, serveret med kartofler, brun sovs og syltede agurker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stegt flæsk</p><p class="font-sans text-cream/45 text-sm mt-1">Sprødstegt flæsk serveret med kogte kartofler og cremet persillesovs. En ægte dansk klassiker.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Desserter</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Affogato</p><p class="font-sans text-cream/45 text-sm mt-1">Vaniljeis med varm espresso</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pandekager</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og chokoladesauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chokoladelavakage</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljeis og bærcoulis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æbletrifli</p><p class="font-sans text-cream/45 text-sm mt-1">Med vaniljecreme, syltetøj, danske makroner og cognac</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+        </div>
+      </section>
     </div>
 
     <!-- DRIKKEVARER TAB -->
     <div id="tab-drikkevarer" class="tab-pane hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-        <div>
-          <p class="section-label mb-8">Cocktails</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gin &amp; Mango Smash</p><p class="font-sans text-cream/45 text-sm mt-1">Glas / kande</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 500</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Raspberry Peach Collins</p><p class="font-sans text-cream/45 text-sm mt-1">Glas / kande</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 500</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Orange Spritz</p><p class="font-sans text-cream/45 text-sm mt-1">Glas / kande</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 500</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Dark &amp; Stormy</p><p class="font-sans text-cream/45 text-sm mt-1">Glas / kande</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 500</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Irish Coffee</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
-        </div>
+      <p class="font-sans text-cream/40 text-xs mb-8">Bar åben til 00:00 &nbsp;·&nbsp; weekend til 01:30</p>
 
-          <p class="section-label mt-14 mb-8">Fadøl</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Pilsner</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">84</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Classic</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">86</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Blanche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">86</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal IPA</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">86</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nyhavn 17 Brown Ale</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">92</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Anarkist Bohemian Ballroom</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">92</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Murphys Stout</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">92</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Cocktails og kander</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">Glas / kande</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Aperol Spritz</p><p class="font-sans text-cream/45 text-sm mt-1">Aperol, prosecco, sodavand, appelsin</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Espresso Martini</p><p class="font-sans text-cream/45 text-sm mt-1">Vodka, kaffelikør, espresso, sukkersirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Moscow Mule</p><p class="font-sans text-cream/45 text-sm mt-1">Vodka, lime, ginger beer</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pornstar Martini</p><p class="font-sans text-cream/45 text-sm mt-1">Vodka, passionsfrugt, vanilje, lime og et shot prosecco</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mojito</p><p class="font-sans text-cream/45 text-sm mt-1">Lys rom, lime, mynte, sukker, danskvand</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bramble</p><p class="font-sans text-cream/45 text-sm mt-1">Gin, citron, sukker, brombær</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Dark ’n’ Stormy</p><p class="font-sans text-cream/45 text-sm mt-1">Mørk rom, lime, ginger beer</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Margarita</p><p class="font-sans text-cream/45 text-sm mt-1">Tequila, triple sec, frisk lime, sukkersirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Paloma</p><p class="font-sans text-cream/45 text-sm mt-1">Tequila, grapefrugt, frisk lime, danskvand</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 349</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gin Basil Smash</p><p class="font-sans text-cream/45 text-sm mt-1">Gin, frisk citron, basilikum, sukkersirup</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139 / 439</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Piña Colada</p><p class="font-sans text-cream/45 text-sm mt-1">Lys rom, kokos, ananas, frisk lime</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139 / 439</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Long Island Iced Tea</p><p class="font-sans text-cream/45 text-sm mt-1">Vodka, gin, rom, tequila, triple sec, citron, cola</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139 / 439</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Bloody Mary</p><p class="font-sans text-cream/45 text-sm mt-1">Tomatjuice, vodka, tabasco, sellerisalt</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139 / 439</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Whisky Sour</p><p class="font-sans text-cream/45 text-sm mt-1">Jameson whisky, citron, sukkersirup, æggehvide</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">139 / 439</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Flaskeøl</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crabbies Ginger Beer</p><p class="font-sans text-cream/45 text-sm mt-1">33 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">79</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Æblecider — Nørrebro Bryghus</p><p class="font-sans text-cream/45 text-sm mt-1">33 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Alkoholfri Heineken Lager</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">59</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Fadøl og cider</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">30 cl / 50 cl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Pilsner</p><p class="font-sans text-cream/45 text-sm mt-1">4,6 % &nbsp;·&nbsp; sprød, forfriskende og let frugtig</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54 / 75</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Classic</p><p class="font-sans text-cream/45 text-sm mt-1">4,6 % &nbsp;·&nbsp; fyldig, blød og let ristet</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">54 / 75</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal I.P.A.</p><p class="font-sans text-cream/45 text-sm mt-1">4,6 % &nbsp;·&nbsp; humlet og frisk med citrus- og bærnoter</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">56 / 79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mørk Mumme</p><p class="font-sans text-cream/45 text-sm mt-1">6,5 % &nbsp;·&nbsp; mørk dansk ale med noter af karamel og ristet malt</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">56 / 79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Murphy’s Irish Stout</p><p class="font-sans text-cream/45 text-sm mt-1">4,7 % &nbsp;·&nbsp; sprød og maltet med Saaz-humle og citrus</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">56 / 79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Royal Blanche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">56 / 79</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Heineken Lager</p><p class="font-sans text-cream/45 text-sm mt-1">5,0 % &nbsp;·&nbsp; sprød, forfriskende og afbalanceret</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">56 / 79</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Tonics</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fever-Tree Indian Tonic</p><p class="font-sans text-cream/45 text-sm mt-1">25 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fever-Tree Mediterranean</p><p class="font-sans text-cream/45 text-sm mt-1">25 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Flaskeøl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crabbies Ginger Beer</p><p class="font-sans text-cream/45 text-sm mt-1">33 cl &nbsp;·&nbsp; 4,0 %</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Magners Cider</p><p class="font-sans text-cream/45 text-sm mt-1">56,8 cl &nbsp;·&nbsp; 4,5 %</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fur Porter</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl &nbsp;·&nbsp; 6,5 %</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fur Bock</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl &nbsp;·&nbsp; 7,6 %</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fur Renæssance</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl &nbsp;·&nbsp; 6,2 %</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Snaps &amp; Kombucha</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Aalborg Snaps</p><p class="font-sans text-cream/45 text-sm mt-1">Se vores snaps / akvavit-menu &nbsp;·&nbsp; 3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">45 / 75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kombucha Inc Premium 0,8%</p><p class="font-sans text-cream/45 text-sm mt-1">Noter af appelsin, vanilje &amp; mango &nbsp;·&nbsp; 15 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75 / 295</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Bobler</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">15 cl / 25 cl / 75 cl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Cava</p><p class="font-sans text-cream/45 text-sm mt-1">Codorníu &mdash; Anna de Codorníu, Blanc de Blancs, Cava Brut</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">90 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crémant</p><p class="font-sans text-cream/45 text-sm mt-1">Maison Albert Sounit &mdash; Crémant de Bourgogne, Prestige Brut</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">120 / 200 / 540</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Prosecco</p><p class="font-sans text-cream/45 text-sm mt-1">Tor del Colle &mdash; Prosecco Tor del Colle</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">120 / 200 / 540</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Champagne</p><p class="font-sans text-cream/45 text-sm mt-1">Nicolas Feuillatte &mdash; Cuvée Spéciale, Brut 2019</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">240 / 400 / 800</span></div></div>
         </div>
-        </div>
+      </section>
 
-        <div>
-          <p class="section-label mb-8">Cava &amp; Champagne</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Codorníu — Anna de Codorníu</p><p class="font-sans text-cream/45 text-sm mt-1">Blanc de Blancs Cava Brut &nbsp;·&nbsp; 15 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 580</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Moët &amp; Chandon</p><p class="font-sans text-cream/45 text-sm mt-1">Champagne Impérial Brut &nbsp;·&nbsp; 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">850</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Perrier-Jouët</p><p class="font-sans text-cream/45 text-sm mt-1">Champagne Belle Époque 2015 &nbsp;·&nbsp; 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">2600</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Hvidvin</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">15 cl / 25 cl / 75 cl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chardonnay</p><p class="font-sans text-cream/45 text-sm mt-1">Hillgrove Creek Chardonnay, Australien, South Eastern Australia</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">90 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Riesling</p><p class="font-sans text-cream/45 text-sm mt-1">Nik Weis Riesling Dry 2025, Tyskland, Mosel</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">120 / 200 / 540</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sauvignon Blanc</p><p class="font-sans text-cream/45 text-sm mt-1">Henri Bourgeois &mdash; Petit Bourgeois Sauvignon Blanc 2024, Frankrig, Loire</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 240 / 720</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Solaris</p><p class="font-sans text-cream/45 text-sm mt-1">Tusen Vin Fjordglimt 2024, Danmark, Sjælland, Holbæk</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">160 / 260 / 800</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Rosé</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">PG Rosé</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Whispering Angel</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Rødvin</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">15 cl / 25 cl / 75 cl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pinot Noir</p><p class="font-sans text-cream/45 text-sm mt-1">Marterey Pinot Noir 2025, Frankrig, Pays d’Oc</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">90 / 150 / 450</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Barbera</p><p class="font-sans text-cream/45 text-sm mt-1">Marziano Abbona Langhe Barbera Casaret 2025, Italien, Piemonte</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">120 / 200 / 540</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tempranillo</p><p class="font-sans text-cream/45 text-sm mt-1">Viña Pomal Reserva 2020, Spanien, Rioja Alta</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 240 / 720</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nebbiolo</p><p class="font-sans text-cream/45 text-sm mt-1">Contea di Castiglione Barolo 2021, Italien, Piemonte, Barolo</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">160 / 260 / 800</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Hvidvin</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Colombard / Sauvignon</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Riesling</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125 / 200 / 600</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chardonnay</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-3">Rosévin</p>
+        <p class="font-sans text-cream/40 text-xs mb-8">15 cl / 25 cl / 75 cl</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Maison Saint AIX</p><p class="font-sans text-cream/45 text-sm mt-1">Frankrig, Provence, Coteaux d’Aix en Provence</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">120 / 200 / 540</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Whispering Angel</p><p class="font-sans text-cream/45 text-sm mt-1">Château d’Esclans Whispering Angel 2025, Frankrig, Provence</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 240 / 720</span></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Rødvin</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Montepulciano</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">95 / 150 / 450</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Garnacha</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125 / 200 / 600</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pinot Noir</p><p class="font-sans text-cream/45 text-sm mt-1">15 cl / 25 cl / 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145 / 250 / 750</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Peter Sisseck — PSI 2023</p><p class="font-sans text-cream/45 text-sm mt-1">75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">950</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Gevrey-Chambertin 2023</p><p class="font-sans text-cream/45 text-sm mt-1">75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">1800</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Kaffe og te</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Kaffe</p><p class="font-sans text-cream/45 text-sm mt-1">Espresso 24 &nbsp;·&nbsp; cortado 30 &nbsp;·&nbsp; caffe latte 45 &nbsp;·&nbsp; cappuccino 45 &nbsp;·&nbsp; flat white 45 &nbsp;·&nbsp; iskaffe 65 &nbsp;·&nbsp; varm chokolade 55</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Te</p><p class="font-sans text-cream/45 text-sm mt-1">Sort te, kamillete, grøn te, lakridste</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">49</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Friskpresset appelsinjuice</p><p class="font-sans text-cream/45 text-sm mt-1">Presses hver dag &nbsp;·&nbsp; 30 cl 59 &nbsp;·&nbsp; 50 cl 79</p></div></div></div>
         </div>
+      </section>
 
-          <p class="section-label mt-14 mb-8">Premium Gin</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Beefeater Dry Gin</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">87 / 105</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Beefeater 24</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">92 / 114</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Malfy con Arancia</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Malfy con Limone</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Malfy Originale</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Malfy Rosa</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Plymouth London Dry</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Plymouth Sloe Gin</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">109 / 142</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Monkey 47 Dry Gin</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">167 / 220</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Monkey 47 Sloe</p><p class="font-sans text-cream/45 text-sm mt-1">3 cl / 5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">167 / 220</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Sodavand og andet</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Sodavand</p><p class="font-sans text-cream/45 text-sm mt-1">Pepsi, Pepsi Max, Mirinda lemon, Mirinda orange, Faxe Kondi &nbsp;·&nbsp; 30 cl 42 &nbsp;·&nbsp; 50 cl 69</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Filtreret vand</p><p class="font-sans text-cream/45 text-sm mt-1">Med eller uden brus &nbsp;·&nbsp; 30 cl 29 &nbsp;·&nbsp; 75 cl 69</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Lemonade</p><p class="font-sans text-cream/45 text-sm mt-1">Hyldeblomst, fersken fra Lipton, lemonade fra Lipton</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">49</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mimosa</p><p class="font-sans text-cream/45 text-sm mt-1">Friskpresset appelsinjuice og prosecco &nbsp;·&nbsp; glas 75 &nbsp;·&nbsp; kande 300</p></div></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Dansk tømmermændskur</p><p class="font-sans text-cream/45 text-sm mt-1">Lille pilsner 30 cl og Gammel Dansk 3 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
         </div>
-
-          <p class="section-label mt-14 mb-8">Sodavand &amp; Juice</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pepsi / Pepsi Max</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Faxe Kondi</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mirinda Orange</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mirinda Lemon</p><p class="font-sans text-cream/45 text-sm mt-1">50 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">75</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Juice</p><p class="font-sans text-cream/45 text-sm mt-1">Æble, hyldeblomst &nbsp;·&nbsp; 27,5 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Iste Fersken</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">65</span></div></div>
-        </div>
-
-          <p class="section-label mt-14 mb-8">Vand</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stille eller Brus</p><p class="font-sans text-cream/45 text-sm mt-1">Flaske 75 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">69</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Glas Vand</p><p class="font-sans text-cream/45 text-sm mt-1">40 cl</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">39</span></div></div>
-        </div>
-        </div>
-      </div>
-    
+      </section>
     </div>
 
     <!-- Price note & CTA -->

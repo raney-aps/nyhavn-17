@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinner Menu — Nyhavn 17</title>
-  <meta name="description" content="The full kitchen menu at Nyhavn 17. Smørrebrød, small plates, classics, burgers, schnitzel and more. Kitchen open 11:30–22:00." />
+  <title>Dinner Menu &mdash; Nyhavn 17</title>
+  <meta name="description" content="Dinner at Nyhavn 17: starters, smørrebrød, shootingstar, Danish classics and the hot kitchen. Served daily 17:00&ndash;22:00." />
   <link rel="alternate" hreflang="en" href="/en/menu-dinner" />
   <link rel="alternate" hreflang="da" href="/menu-dinner" />
   <link rel="alternate" hreflang="x-default" href="/menu-dinner" />
@@ -25,6 +25,10 @@
     .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
     #mobile-menu{display:none;position:fixed;inset:0;background:rgba(18,12,6,.98);z-index:40;flex-direction:column;justify-content:flex-start;align-items:center;gap:1.25rem;padding:5rem 1rem 3rem;overflow-y:auto}#mobile-menu.open{display:flex}
     .menu-item{border-top:1px solid rgba(42,58,79,.8);transition:border-color .3s}.menu-item:hover{border-top-color:rgba(247,205,111,.4)}.menu-item:hover .item-name{color:#F7CD6F}.item-name{transition:color .3s}
+    .menu-sec{margin-bottom:4.5rem}.menu-sec:last-of-type{margin-bottom:0}
+    .menu-cols{column-gap:4rem}
+    @media(min-width:1024px){.menu-cols{column-count:2}}
+    .menu-cols > .menu-item{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
     .section-label{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,205,111,.7)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
     @media (hover: none) and (pointer: coarse) {
@@ -122,7 +126,7 @@
     <p class="reveal font-sans text-gold text-xs tracking-[0.3em] uppercase mb-4">Nyhavn 17</p>
     <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-7xl text-cream mb-4">Dinner in Nyhavn</h1>
     <div class="reveal reveal-delay-2 w-12 h-px bg-gold mx-auto mb-6"></div>
-    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Kitchen open <strong class="text-cream">11:30</strong> — <strong class="text-cream">22:00</strong></p>
+    <p class="reveal reveal-delay-2 font-sans text-cream/55 text-sm">Served daily <strong class="text-cream">17:00</strong> &mdash; <strong class="text-cream">22:00</strong></p>
   </header>
 
   <div class="bg-navy-mid border-b border-navy-light">
@@ -135,43 +139,88 @@
   </div>
 
   <main class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
-      <div>
-        <p class="section-label mb-8">Open Faced Sandwiches</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">2 Kinds of Herring</p><p class="font-sans text-cream/45 text-sm mt-1">Marinated herring, curry herring, apples, onions, lard, rye bread &amp; seasonal herbs</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Eggs &amp; Shrimps</p><p class="font-sans text-cream/45 text-sm mt-1">Peeled shrimps, mayonnaise, soft boiled eggs &amp; toasted brioche bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Shrimps on Toast</p><p class="font-sans text-cream/45 text-sm mt-1">Peeled shrimps, dill-mayonnaise, dill &amp; toasted brioche bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Filet of Plaice</p><p class="font-sans text-cream/45 text-sm mt-1">Fried filet of plaice in breadcrumbs, remoulade, lemon, tomato &amp; dill &nbsp;·&nbsp; add shrimps +59</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">179</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chicken Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Pulled chicken in homemade dressing, mushrooms, asparagus, bacon &amp; cress</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">Sliced roastbeef, remoulade, crispy onions, pickled cucumber, horseradish, capers &amp; cress</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">189</span></div></div>
-        </div>
 
-        <p class="section-label mt-14 mb-8">Sharing Plates</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pulled Pork Sliders</p><p class="font-sans text-cream/45 text-sm mt-1">Slow-cooked pork in a soft brioche bun, creamy coleslaw &amp; BBQ sauce &nbsp;·&nbsp; 2 pcs</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Hot Wings</p><p class="font-sans text-cream/45 text-sm mt-1">Chicken wings tossed in BBQ sauce with ranch &amp; coriander</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Truffle Fries</p><p class="font-sans text-cream/45 text-sm mt-1">Golden fries, parmesan &amp; sriracha mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Deep Fried Calamari</p><p class="font-sans text-cream/45 text-sm mt-1">Small calamari, aioli &amp; lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">169</span></div></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Club sandwich</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">With chicken, bacon, curry dressing, salad and fries</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Burger</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">With cheese, bacon and fries</p><span class="font-serif text-2xl text-gold">159</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Nachos</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">Cheddar, salsa, guacamole and creme fraiche</p><span class="font-serif text-2xl text-gold">139</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Fish n chips</p><p class="font-sans text-cream/50 text-sm leading-relaxed mb-4">With fresh haddock, sauce tartare or remoulade, golden fries and lemon</p><span class="font-serif text-2xl text-gold">169</span></div>
+        <div class="p-6 border border-gold/30 bg-navy-dark/50"><p class="font-serif text-2xl text-cream mb-2">Soup of the day</p><span class="font-serif text-2xl text-gold">89</span></div>
+      </div>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Starters</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Marinated white herring</p><p class="font-sans text-cream/45 text-sm mt-1">With onions and capers</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Classic Danish shrimp cocktail</p><p class="font-sans text-cream/45 text-sm mt-1">Hand-peeled shrimps, crisp lettuce, cucumber, lemon and homemade cocktail dressing</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Smoked salmon</p><p class="font-sans text-cream/45 text-sm mt-1">With smoked cheese cream, dill, lemon and rye bread</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Mushroom toast</p><p class="font-sans text-cream/45 text-sm mt-1">With toasted sourdough bread, mushrooms in season and cream sauce with thyme and garlic</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">99</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Open faced sandwich / Smørrebrød</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Egg and peeled shrimp</p><p class="font-sans text-cream/45 text-sm mt-1">With mayonnaise, black pepper, dill and lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Peeled shrimps</p><p class="font-sans text-cream/45 text-sm mt-1">With mayonnaise, black pepper, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fillet of plaice 1.</p><p class="font-sans text-cream/45 text-sm mt-1">With remoulade, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fillet of plaice 2.</p><p class="font-sans text-cream/45 text-sm mt-1">With mayonnaise, shrimps, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">135</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Fillet of plaice 3.</p><p class="font-sans text-cream/45 text-sm mt-1">With mayonnaise, shrimps, salmon roe, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Smoked salmon</p><p class="font-sans text-cream/45 text-sm mt-1">With horseradish and smoked cheese cream</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Smoked salmon and eggs</p><p class="font-sans text-cream/45 text-sm mt-1">With creamy egg salad, tomato, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Snapsemad</p><p class="font-sans text-cream/45 text-sm mt-1">With marinated herring, boiled potatoes, dill cream and lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Crispy pork</p><p class="font-sans text-cream/45 text-sm mt-1">With red cabbage and cucumber salad</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Danish meat balls</p><p class="font-sans text-cream/45 text-sm mt-1">With red cabbage and cucumber salad</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chicken salad</p><p class="font-sans text-cream/45 text-sm mt-1">With bacon, mushrooms, asparagus and cress</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">145</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Roastbeef</p><p class="font-sans text-cream/45 text-sm mt-1">With pickles, cucumber salad, horseradish, cress, capers and crispy onions</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">155</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Potato <span class="text-gold/70">(vegetarian)</span></p><p class="font-sans text-cream/45 text-sm mt-1">With smoked cheese cream, pickled onions, crispy onions, cress and spring onion</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Tomato <span class="text-gold/70">(vegetarian)</span></p><p class="font-sans text-cream/45 text-sm mt-1">With hard boiled egg, marinated tomatoes, mayonnaise and chives</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Blue cheese</p><p class="font-sans text-cream/45 text-sm mt-1">With raw egg yolk, onions and cress</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Old cheese</p><p class="font-sans text-cream/45 text-sm mt-1">With chicken stock jelly, onions and cress</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Deep fried camembert</p><p class="font-sans text-cream/45 text-sm mt-1">With blueberry jam and toasted brioche</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">125</span></div></div>
+        </div>
+      </section>
+
+      <div class="mb-16 p-8 md:p-10 border border-gold/30 bg-navy-dark/50">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div class="flex-1">
+            <p class="section-label mb-3">House speciality</p>
+            <h2 class="font-serif text-3xl md:text-4xl text-cream mb-4">Shootingstar / Stjerneskud</h2>
+            <p class="font-sans text-cream/60 text-sm leading-relaxed max-w-2xl">Fried and steamed fillets of plaice with shrimps, asparagus and dressing</p>
+          </div>
+          <span class="font-serif text-3xl text-gold md:ml-8 shrink-0">179</span>
         </div>
       </div>
 
-      <div>
-        <p class="section-label mb-8">Recommended Plates</p>
-        <div class="space-y-0">
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signature Fish &amp; Chips<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATURE</span></p><p class="font-sans text-cream/45 text-sm mt-1">Filet of haddock in beer-batter, fresh lemon, golden fries &amp; homemade tartar sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">279</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">17 House Burger</p><p class="font-sans text-cream/45 text-sm mt-1">230g beef burger with cheddar, bacon, lettuce, tomato, pickles, signature burger sauce &amp; golden fries &nbsp;·&nbsp; vegetarian available</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">249</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Classic Club Sandwich</p><p class="font-sans text-cream/45 text-sm mt-1">Grilled chicken breast, curry mayonnaise, tomato, lettuce, bacon, golden fries &amp; mayonnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Nachos Chicken</p><p class="font-sans text-cream/45 text-sm mt-1">Grilled chicken, tortilla chips with melted cheddar, jalapeños, salsa, guacamole, coriander &amp; sour cream</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">229</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Signature Shooting Star<span class="ml-2 text-xs tracking-widest text-gold/80 font-sans">SIGNATURE</span></p><p class="font-sans text-cream/45 text-sm mt-1">Fried filet of plaice, baked salmon, shrimps, caviar, tomato, lemon, asparagus &amp; Thousand Island sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">289</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Salmon Hollandaise</p><p class="font-sans text-cream/45 text-sm mt-1">Baked salmon, stir-fried black olives, potatoes &amp; asparagus, fresh sauce hollandaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">299</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Veal Schnitzel 400g</p><p class="font-sans text-cream/45 text-sm mt-1">Classic breaded veal schnitzel with capers, anchovies, horseradish, potato wedges &amp; sauce béarnaise</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Peppercorn Steak</p><p class="font-sans text-cream/45 text-sm mt-1">350g New York Strip, golden fries, green salad in vinaigrette &amp; Madagascar peppercorn sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">389</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Spareribs</p><p class="font-sans text-cream/45 text-sm mt-1">Slow-cooked Danish pork ribs, barbecue sauce, French fries, corn &amp; coleslaw</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">379</span></div></div>
-          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Caesar Salad</p><p class="font-sans text-cream/45 text-sm mt-1">Grilled chicken breast, herbal croutons, baby gem lettuce, homemade caesar dressing, black olives &amp; sundried tomatoes</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">269</span></div></div>
+      <section class="menu-sec">
+        <p class="section-label mb-8">Hot kitchen</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Filet of plaice</p><p class="font-sans text-cream/45 text-sm mt-1">With remoulade, golden fries, lemon and dill</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">168</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Baked wild salmon</p><p class="font-sans text-cream/45 text-sm mt-1">With artichokes, potatoes, green olives, hollandaise sauce and lemon</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Danish minced steak / Herregårdsbøf</p><p class="font-sans text-cream/45 text-sm mt-1">With a 230 g minced beef patty, bearnaise sauce, green peas and potato wedges</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">178</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Wiener schnitzel</p><p class="font-sans text-cream/45 text-sm mt-1">Crispy breaded veal, served with fried potatoes, peas, lemon, capers and anchovies</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Steak frites of beef filet</p><p class="font-sans text-cream/45 text-sm mt-1">With optional sauce: bearnaise or green peppercorn, golden fries and green salad</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">198</span></div></div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Danish classics</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Biksemad</p><p class="font-sans text-cream/45 text-sm mt-1">A traditional Danish comfort-food classic made with diced potatoes, onions and tender pieces of meat, pan-fried until golden and crispy. Served with a fried egg, beetroot and classic Danish condiments.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Danish meatballs (frikadeller)</p><p class="font-sans text-cream/45 text-sm mt-1">Traditional pan-fried pork and veal meatballs, served with potatoes, rich gravy and pickled cucumber.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Stegt flæsk / crispy pork belly</p><p class="font-sans text-cream/45 text-sm mt-1">Traditional Danish crispy pork belly served with boiled potatoes and a creamy parsley sauce. A true Danish classic.</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">159</span></div></div>
+        </div>
+      </section>
+
+      <section class="menu-sec">
+        <p class="section-label mb-8">Desserts</p>
+        <div class="menu-cols">
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Affogato</p><p class="font-sans text-cream/45 text-sm mt-1">Vanilla ice cream with a hot espresso shot</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Pancakes</p><p class="font-sans text-cream/45 text-sm mt-1">With vanilla ice cream and chocolate sauce</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Chocolate lava cake</p><p class="font-sans text-cream/45 text-sm mt-1">With vanilla ice cream and berry coulis</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+          <div class="menu-item py-5"><div class="flex justify-between items-start"><div><p class="item-name font-serif text-xl text-cream">Apple trifle</p><p class="font-sans text-cream/45 text-sm mt-1">With vanilla cream, jam, Danish macaroons and cognac</p></div><span class="font-sans text-gold text-sm ml-6 shrink-0">89</span></div></div>
+        </div>
+      </section>
 
     <div class="mt-24 pt-16 border-t border-navy-light text-center">
       <p class="font-sans text-cream/50 text-sm mb-2">All prices in DKK.</p>
